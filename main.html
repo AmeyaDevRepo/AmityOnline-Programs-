@@ -4,8 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AmityOnline Programs
-    </title>
+    <title>AmityOnline Programs</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -16,12 +15,9 @@
             justify-content: center;
             align-items: center;
             background-image: url('./images/Ameya\ Innovex\ Logo.png');
-            /* Replace with your image URL */
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            overflow: auto;
-            /* Allow scrolling */
         }
 
         .overlay {
@@ -31,7 +27,6 @@
             width: 100%;
             height: 100%;
             background-color: rgba(0, 0, 0, 0.6);
-            /* Semi-transparent dark overlay */
             z-index: 1;
         }
 
@@ -44,13 +39,7 @@
             border-radius: 10px;
             max-width: 800px;
             background: rgba(255, 255, 255, 0.1);
-            /* Subtle transparent background for the content */
             backdrop-filter: blur(10px);
-            /* Adds a blur effect */
-            overflow-y: auto;
-            /* Allow scrolling within content */
-            max-height: 90vh;
-            /* Limit the height to avoid overflow */
         }
 
         h1 {
@@ -61,9 +50,6 @@
         .links {
             text-align: left;
             margin: 20px auto;
-            max-height: 60vh;
-            /* Ensure links section is scrollable */
-            overflow-y: auto;
         }
 
         a {
@@ -79,52 +65,84 @@
             color: #1e90ff;
         }
 
-        h6 {
-            margin: 10px 0 5px;
+        .login-container {
+            position: relative;
+            z-index: 3;
+            color: #000;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            display: none;
+        }
+
+        .login-container input {
+            margin: 10px;
+            padding: 10px;
             font-size: 16px;
-            color: #ffcccb;
+            width: 80%;
+            max-width: 300px;
         }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 28px;
-            }
-
-            a {
-                font-size: 16px;
-            }
-
-            .content {
-                padding: 15px;
-                max-width: 90%;
-                /* Reduce width for smaller screens */
-            }
+        .login-container button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4db8ff;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            cursor: pointer;
         }
 
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 24px;
-            }
-
-            a {
-                font-size: 14px;
-            }
+        .login-container button:hover {
+            background-color: #1e90ff;
         }
     </style>
 </head>
 
 <body>
     <div class="overlay"></div>
-    <div class="content">
+
+    <!-- Login Form -->
+    <div class="login-container" id="login-container">
+        <h1>Login</h1>
+        <input type="text" id="username" placeholder="Username" />
+        <input type="password" id="password" placeholder="Password" />
+        <button onclick="authenticate()">Enter credentials</button>
+        <p id="error-message" style="color: red; display: none;">Invalid credentials. Try again.</p>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content" id="protected-content" style="display: none;">
         <h1>Amity HTML Pages</h1>
         <div class="links">
             <a href="./BBA/">BBA Page</a>
             <a href="./MBA/">MBA Page</a>
             <a href="./MCA/">MCA Page</a>
-            <a href="./BCA/">BCA page</a>
+            <a href="./BCA/">BCA Page</a>
         </div>
     </div>
+
+    <script>
+        // Set your username and password here
+        const USERNAME = "admin";
+        const PASSWORD = "password123";
+
+        function authenticate() {
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            if (username === USERNAME && password === PASSWORD) {
+                document.getElementById("login-container").style.display = "none";
+                document.getElementById("protected-content").style.display = "block";
+            } else {
+                document.getElementById("error-message").style.display = "block";
+            }
+        }
+
+        // Show login form on page load
+        document.getElementById("login-container").style.display = "block";
+    </script>
 </body>
 
 </html>
