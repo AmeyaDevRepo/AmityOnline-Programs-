@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const callCloseButton = document.querySelector("#call_modal .Modal_close__C0ggP");
 
     // Login Modal Elements
+    let studentLoginVar = true;
     const loginModal = document.getElementById("_modal");
     const loginButton = document.getElementById("login-button");
     const loginCloseButton = document.querySelector("#_modal .Modal_close__C0ggP");
@@ -141,23 +142,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // login modal script start
     // const studentLoginVar = true;
-    document.getElementById('loginwithotp').addEventListener('click', (e)=>{
-
-        if(studentLoginVar){
-        document.getElementById('phoneinputfield').style.display = 'block';
-        document.getElementById('emailinputfield').style.display = 'none';
-        document.getElementById('phoneinputfieldapplicant').style.display = 'none';
-        document.getElementById('loginwithemail').checked = false; 
-        document.getElementById('loginwithotp').checked = true; 
-        }else{
+    document.getElementById('loginwithotp').addEventListener('click', (e) => {
+        if (studentLoginVar) {
+            document.getElementById('phoneinputfield').style.display = 'block';
+            document.getElementById('emailinputfield').style.display = 'none';
+            document.getElementById('phoneinputfieldapplicant').style.display = 'none';
+            document.getElementById('loginwithemail').checked = false; 
+            document.getElementById('loginwithotp').checked = true; 
+        } else {
             document.getElementById('phoneinputfieldapplicant').style.display = 'block';
-        document.getElementById('emailinputfield').style.display = 'none';
-        document.getElementById('phoneinputfield').style.display = 'none';
-        document.getElementById('loginwithemail').checked = false; 
-        document.getElementById('loginwithotp').checked = true; 
+            document.getElementById('emailinputfield').style.display = 'none';
+            document.getElementById('phoneinputfield').style.display = 'none';
+            document.getElementById('loginwithemail').checked = false; 
+            document.getElementById('loginwithotp').checked = true; 
         }
+    });
     
-})
     document.getElementById('loginwithemail').addEventListener('click',(e)=>{
             if(studentLoginVar){
             document.getElementById('emailinputfield').style.display = 'block';
@@ -393,3 +393,51 @@ if (downloadCloseButtonMobile && downloadModalMobile) {
         }
     });
 });
+
+  document.addEventListener("DOMContentLoaded", function () {
+    // Select all menu items
+    const menuItems = document.querySelectorAll(".ProgramsMenu_item__mfuSn");
+
+    // Add click event listener to each menu item
+    menuItems.forEach((item) => {
+      item.addEventListener("click", function () {
+        // Remove the active class from all items
+        menuItems.forEach((el) =>
+          el.classList.remove("ProgramsMenu_active__4g64w")
+        );
+
+        // Add the active class to the clicked item
+        item.classList.add("ProgramsMenu_active__4g64w");
+      });
+    });
+  });
+function enableScroll(elementId) {
+    const container = document.getElementById(elementId);
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    container.addEventListener('mousedown', (e) => {
+        isDown = true;
+        startX = e.pageX - container.offsetLeft;
+        scrollLeft = container.scrollLeft;
+    });
+
+    container.addEventListener('mouseleave', () => {
+        isDown = false;
+    });
+
+    container.addEventListener('mouseup', () => {
+        isDown = false;
+    });
+
+    container.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - container.offsetLeft;
+        const walk = (x - startX);
+        container.scrollLeft = scrollLeft - walk;
+    });
+}
+
+enableScroll('landingPageFacultyList');

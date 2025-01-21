@@ -3452,30 +3452,30 @@ const initializeSwiper = () => {
 	if (!swiperElement) return;
 	
 	const slideCount = swiperElement.querySelectorAll('.swiper-slide').length;
-	const shouldLoop = slideCount > 4 || window.innerWidth < 768;
-	const isFewSlides = slideCount <= 3 && slideCount > 1;
+	
+	// Always enable loop for better user experience
+	const shouldLoop = true;
 	
 	const specializationSwiper = new Swiper('#Carousel .swiper', {
 	  init: false,
 	  slidesPerView: 'auto',
 	  spaceBetween: 20,
 	  loop: shouldLoop,
-	  loopedSlides: shouldLoop ? Math.max(slideCount * 2, 4) : null,
+	  loopedSlides: slideCount,
 	  preventInteractionOnTransition: true,
 	  
 	  pagination: {
-		el: '#Carousel .swiper-pagination',  // Updated selector to be more specific
+		el: '#Carousel .swiper-pagination',
 		clickable: true,
 		bulletClass: 'swiper-pagination-bullet',
 		bulletActiveClass: 'swiper-pagination-bullet-active',
 		renderBullet: function (index, className) {
 		  return `<span class="${className}"></span>`;
 		},
-		dynamicBullets: true, // Added to handle bullet rendering dynamically
-		dynamicMainBullets: 3 // Show 3 main bullets
+		// Disable dynamic bullets to show all pagination bullets
+		dynamicBullets: false
 	  },
   
-	  // Rest of the configuration remains the same
 	  breakpoints: {
 		320: {
 		  slidesPerView: 1,
@@ -3495,9 +3495,9 @@ const initializeSwiper = () => {
 	  },
   
 	  autoplay: {
-		delay: 10000,
+		delay: 5000,
 		disableOnInteraction: false,
-		enabled: shouldLoop,
+		enabled: true,
 		waitForTransition: true
 	  },
   
@@ -3505,8 +3505,8 @@ const initializeSwiper = () => {
 	  speed: 800,
 	  
 	  navigation: {
-		nextEl: '.swiper-button-next',
-		prevEl: '.swiper-button-prev',
+		nextEl: '#Carousel .swiper-button-next',
+		prevEl: '#Carousel .swiper-button-prev',
 	  },
   
 	  observer: true,
@@ -3516,29 +3516,39 @@ const initializeSwiper = () => {
   
 	  on: {
 		init: function() {
-		  this.update();
-		  // Force pagination visibility when initialized
+		  // Force pagination visibility
 		  const paginationEl = document.querySelector('#Carousel .swiper-pagination');
 		  if (paginationEl) {
-			paginationEl.style.display = shouldLoop ? 'block' : 'none';
+			paginationEl.style.display = 'block';
+			
+			// Create pagination bullets based on actual slide count
+			paginationEl.innerHTML = '';
+			for (let i = 0; i < slideCount; i++) {
+			  const bullet = document.createElement('span');
+			  bullet.className = `swiper-pagination-bullet${i === 0 ? ' swiper-pagination-bullet-active' : ''}`;
+			  bullet.addEventListener('click', () => {
+				this.slideToLoop(i);
+			  });
+			  paginationEl.appendChild(bullet);
+			}
 		  }
+		  
+		  // Make slides visible
 		  swiperElement.querySelectorAll('.swiper-slide').forEach(slide => {
 			slide.style.visibility = 'visible';
 			slide.style.opacity = '1';
 		  });
 		},
 		
-		beforeLoopFix: function() {
-		  if (shouldLoop) {
-			this.snapIndex = this.activeIndex % this.slides.length;
-		  }
-		},
-		
-		loopFix: function() {
-		  if (shouldLoop) {
-			swiperElement.querySelectorAll('.swiper-slide').forEach(slide => {
-			  slide.style.visibility = 'visible';
-			  slide.style.opacity = '1';
+		slideChange: function() {
+		  // Update pagination bullets on slide change
+		  const paginationEl = document.querySelector('#Carousel .swiper-pagination');
+		  if (paginationEl) {
+			const bullets = paginationEl.querySelectorAll('.swiper-pagination-bullet');
+			const realIndex = this.realIndex;
+			
+			bullets.forEach((bullet, index) => {
+			  bullet.classList.toggle('swiper-pagination-bullet-active', index === realIndex);
 			});
 		  }
 		}
@@ -3552,12 +3562,13 @@ const initializeSwiper = () => {
 	  specializationSwiper.update();
 	});
   
+	// Update styles
 	const style = document.createElement('style');
 	style.textContent = `
 	  #Carousel .swiper {
 		padding: 0;
 		position: relative;
-		margin-bottom: 40px; /* Add space for pagination */
+		margin-bottom: 40px;
 	  }
   
 	  #Carousel .swiper-wrapper {
@@ -3572,32 +3583,32 @@ const initializeSwiper = () => {
 	  }
   
 	  #Carousel .swiper-pagination {
-      display: ${shouldLoop ? 'block' : 'none'} !important;
-      position: absolute;
-      bottom: -30px;
-      left: 0;
-      right: 0;
-      text-align: center;
-      z-index: 10;
-      opacity: 1;
-      visibility: visible;
-    }
-
-    #Carousel .swiper-pagination-bullet {
-      width: 10px;
-      height: 10px;
-      background: #D4D4D4;
-      opacity: 1;
-      margin: 0 5px;
-      cursor: pointer;
-      display: inline-block;
-      border-radius: 50%;
-      transition: background-color 0.3s ease;
-    }
-
-    #Carousel .swiper-pagination-bullet-active {
-      background: #0066CC;
-    }
+		display: block !important;
+		position: absolute;
+		bottom: -30px;
+		left: 0;
+		right: 0;
+		text-align: center;
+		z-index: 10;
+		opacity: 1;
+		visibility: visible;
+	  }
+  
+	  #Carousel .swiper-pagination-bullet {
+		width: 10px;
+		height: 10px;
+		background: #D4D4D4;
+		opacity: 1;
+		margin: 0 5px;
+		cursor: pointer;
+		display: inline-block;
+		border-radius: 50%;
+		transition: background-color 0.3s ease;
+	  }
+  
+	  #Carousel .swiper-pagination-bullet-active {
+		background: #0066CC;
+	  }
   
 	  @media (max-width: 767px) {
 		#Carousel .swiper-wrapper {
@@ -3608,13 +3619,6 @@ const initializeSwiper = () => {
 		  width: 100% !important;
 		}
 	  }
-  
-	  /* Ensure transform works on mobile */
-	  @media (max-width: 767px) {
-		#Carousel .swiper-wrapper {
-		  transform: translate3d(0, 0, 0);
-		}
-	  }
 	`;
 	document.head.appendChild(style);
   };
@@ -3623,4 +3627,100 @@ const initializeSwiper = () => {
 	document.addEventListener('DOMContentLoaded', initializeSwiper);
   } else {
 	initializeSwiper();
+  }
+
+  const initializeIndustriesCarousel = () => {
+	const swiperElement = document.querySelector('.SectionCard_root__vJRVT .swiper');
+	if (!swiperElement) return;
+	
+	const slideCount = swiperElement.querySelectorAll('.swiper-slide').length;
+	
+	const industriesSwiper = new Swiper('.SectionCard_root__vJRVT .swiper', {
+	  init: false,
+	  slidesPerView: 'auto',
+	  spaceBetween: 80, // Significantly increased gap between cards
+	  loop: true,
+	  loopedSlides: slideCount,
+	  preventInteractionOnTransition: true,
+	  
+	  pagination: {
+		el: '.SectionCard_root__vJRVT .swiper-pagination',
+		clickable: true,
+		bulletClass: 'swiper-pagination-bullet',
+		bulletActiveClass: 'swiper-pagination-bullet-active'
+	  },
+  
+	  breakpoints: {
+		320: {
+		  slidesPerView: 1,
+		  spaceBetween: 80,
+		  centeredSlides: true
+		},
+		768: {
+		  slidesPerView: Math.min(slideCount, 4), // Show 4 cards on larger screens
+		  spaceBetween: 80,
+		  centeredSlides: false
+		},
+		1024: {
+		  slidesPerView: Math.min(slideCount, 4),
+		  spaceBetween: 80,
+		  centeredSlides: false
+		}
+	  },
+  
+	  autoplay: {
+		delay: 5000,
+		disableOnInteraction: false,
+		enabled: true
+	  },
+  
+	  effect: 'slide',
+	  speed: 800,
+	  
+	  observer: true,
+	  observeParents: true,
+	  watchOverflow: true,
+	  watchSlidesProgress: true,
+  
+	  on: {
+		init: function() {
+		  // Set smaller card width
+		  swiperElement.querySelectorAll('.swiper-slide').forEach(slide => {
+			slide.style.visibility = 'visible';
+			slide.style.opacity = '1';
+			slide.style.width = '250px !important'; // Decreased card width to match the image
+		  });
+  
+		  // Adjust the card container width
+		  swiperElement.querySelectorAll('.AdvantageCard_AdvantageCard__container__bvEfL').forEach(card => {
+			card.style.maxWidth = '250px';
+		  });
+		},
+		
+		slideChange: function() {
+		  const paginationEl = document.querySelector('.SectionCard_root__vJRVT .swiper-pagination');
+		  if (paginationEl) {
+			const bullets = paginationEl.querySelectorAll('.swiper-pagination-bullet');
+			const realIndex = this.realIndex;
+			
+			bullets.forEach((bullet, index) => {
+			  bullet.classList.toggle('swiper-pagination-bullet-active', index === realIndex);
+			});
+		  }
+		}
+	  }
+	});
+  
+	industriesSwiper.init();
+  
+	// Update on window resize
+	window.addEventListener('resize', () => {
+	  industriesSwiper.update();
+	});
+  };
+  
+  if (document.readyState === 'loading') {
+	document.addEventListener('DOMContentLoaded', initializeIndustriesCarousel);
+  } else {
+	initializeIndustriesCarousel();
   }
