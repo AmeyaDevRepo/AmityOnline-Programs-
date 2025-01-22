@@ -884,12 +884,14 @@ select.banner-input{
 }
 .advantage-list .owl-stage{
     display: flex;
+    gap: 50px;
 }
 .advantage-list .item{
     height: 100%;
+    width: 250px;
 }
 .advantage-item{
-    padding-right: 12%;
+    padding-right: 15%;
     margin-bottom: 30px;
     display: flex;
     flex-direction: column;
@@ -919,7 +921,7 @@ select.banner-input{
 .advantage-list .owl-dots{
     display: none;
     justify-content: center;
-    gap: 10px;
+    gap: 30px;
 }
 .advantage-list .owl-dot{
     height: 12px;
@@ -1106,6 +1108,7 @@ ul.curri-detail li i{
 }
 .eligible-list{
     margin: 40px 0px;
+    color: gray;
 }
 .eligible-item{
     display: flex;
@@ -2067,6 +2070,11 @@ ul.curri-detail li i{
     border: none;
     padding: 10px 0px;
 }
+
+.accordion-item:not(:first-of-type) {
+    border-top: 0px;
+}
+
 .faq-list .accordion-button{
     background-color: transparent;
     border: none;
@@ -9738,3 +9746,8 @@ img,video {
 .col-9 {
     width: 65%;
 }
+.accordion-body ul {
+    list-style-type: disc !important;  /* Force bullets */
+    padding-left: 20px;  /* Adjust indentation if necessary */
+  }
+  
