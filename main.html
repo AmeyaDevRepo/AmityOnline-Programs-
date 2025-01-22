@@ -14,7 +14,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background-image: url('./images/Ameya\ Innovex\ Logo.png');
+            background-image: url('./images/Ameya Innovex Logo.png');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -50,6 +50,8 @@
         .links {
             text-align: left;
             margin: 20px auto;
+            max-height: 60vh; /* Ensure links section is scrollable */
+            overflow-y: auto;
         }
 
         a {
@@ -74,6 +76,7 @@
             border-radius: 10px;
             text-align: center;
             display: none;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
         .login-container input {
@@ -82,6 +85,8 @@
             font-size: 16px;
             width: 80%;
             max-width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
         }
 
         .login-container button {
@@ -96,6 +101,20 @@
 
         .login-container button:hover {
             background-color: #1e90ff;
+        }
+
+        @media (max-width: 768px) {
+            .content {
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            a {
+                font-size: 16px;
+            }
         }
     </style>
 </head>
@@ -132,7 +151,35 @@
                 <li><a href="./bachelor-of-computer-applications-online/">Bachelor of Computer Applications (BCA)</a></li>
                 <li><a href="./master-of-computer-applications-online/">Master of Computer Applications (MCA)</a></li>
                 <li><a href="./bachelor-of-commerce-online/">Bachelor of Commerce</a></li>
-                <!-- <li><a href="./Program/">Program page</a></li> -->
+
+                <li><a href="./bachelor-of-arts-online/">Bachelor of Arts (BA)</a></li>
+                <li><a href="./bachelor-of-arts-journalism-and-mass-communication-online/">Bachelor of Arts (Journalism and Mass Communication) (BAJMC)</a></li>
+                <li><a href="./master-of-commerce-financial-management-online/">Master of Commerce (Financial Management) (M.Com)</a></li>
+                <li><a href="./master-of-arts-journalism-and-mass-communication-online/">Master of Arts (Journalism and Mass Communication) (MAJMC)</a></li>
+                <li><a href="./ma-public-policy/">Master of Arts (Public Policy & Governance) ( MAPPG)</a></li>
+                <li><a href="./bba-data-analytics/">Bachelor of Business Administration with specialization in Data Analytics</a></li>
+                <li><a href="./bca-data-engineering/">Bachelor of Computer Applications with specialization in Data Engineering (BCA)</a></li>
+                <li><a href="./bca-software-engineering/">Bachelor of Computer Applications with specialization in Software Engineering (BCA)</a></li>
+                <li><a href="./mca-cybersecurity/">Master of Computer Applications with specialization in Cyber Security (MCA)</a></li>
+                <li><a href="./mca-software-engineering/">Master of Computer Applications with specialization in Software Engineering (MCA)</a></li>
+                <li><a href="./msc-in-data-science/">Master of Science (Data Science) (M.Sc)</a></li>
+                <li><a href="./ma-in-psychology/">Master of Arts (Psychology) (MA)</a></li>
+                <li><a href="./bachelor-of-commerce-honours/">Bachelor of Commerce (Hons) (B.Com)</a></li>
+                <li><a href="./combo-degree-program/">UG + PG Degree Program</a></li>
+                <li><a href="./bca-mca/">BCA + MCA Degree Program</a></li>
+                
+                <!-- <li><a href="./MCA_BLOCKCHAIN/">Master of Computer Applications with specialization in Blockchain Technology and Management (MCA)</a></li>
+                <li><a href="./MCA-ML-AI/">Master of Computer Applications with specialization in Machine Learning and Artificial Intelligence (MCA)</a></li>
+                <li><a href="./mca-machine-learning-online/">MCA with specialization in Machine Learning & Artificial Intelligence (MCA)</a></li>
+                <li><a href="./MCOM_FT/">Master of Commerce with specialization in Financial Technology (M.Com)</a></li>
+                <li><a href="./BCA_DATA_ANALYTICS/">Bachelor of Computer Applications with specialization in Data Analytics (BCA)</a></li>
+                <li><a href="./bcom-internationalfinance/">Bachelor of Commerce with specialization in International Finance & Accounting (B.COM)</a></li>
+                <li><a href="./MCA_AR/">Master of Computer Applications with specialization in Augmented Reality and Virtual Reality (MCA)</a></li>
+                <li><a href="./BCA-cyber_security/">Bachelor of Computer Applications with specialization in Cloud and Security (BCA)</a></li> 
+                
+                <li><a href="./Program/">https://amityonline.com/Program</a></li>
+                <li><a href="./career_services/">https://amityonline.com/career-services</a></li>
+                <li><a href="./AMITY_ONLINE_ADVANTAGE/">https://amityonline.com/amity-online-advantage</a></li> -->
             </ol>
         </div>
     </div>
@@ -141,18 +188,41 @@
         const USERNAME = "amitypages";
         const PASSWORD = "ameyaunivo@111";
 
+        function setCookie(name, value, days) {
+            const date = new Date();
+            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+            document.cookie = `${name}=${value}; expires=${date.toUTCString()}; path=/`;
+        }
+
+        function getCookie(name) {
+            const value = `; ${document.cookie}`;
+            const parts = value.split(`; ${name}=`);
+            if (parts.length === 2) return parts.pop().split(';').shift();
+        }
+
         function authenticate() {
             const username = document.getElementById("username").value;
             const password = document.getElementById("password").value;
             if (username === USERNAME && password === PASSWORD) {
-                document.getElementById("login-container").style.display = "none";
-                document.getElementById("protected-content").style.display = "block";
+                setCookie("loggedIn", true, 7);
+                showContent();
             } else {
                 document.getElementById("error-message").style.display = "block";
             }
         }
 
-        document.getElementById("login-container").style.display = "block";
+        function showContent() {
+            document.getElementById("login-container").style.display = "none";
+            document.getElementById("protected-content").style.display = "block";
+        }
+
+        window.onload = () => {
+            if (getCookie("loggedIn")) {
+                showContent();
+            } else {
+                document.getElementById("login-container").style.display = "block";
+            }
+        };
     </script>
 </body>
 
