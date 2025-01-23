@@ -27,7 +27,6 @@
 }
  
 .DigitalMarketing_stroke__VzAot {
-    border-bottom: 1.5px solid #d4d4d4;
     margin: 1.5rem 0;
 }
  
@@ -84,4 +83,29 @@
         max-width: 60px; /* Smaller images on mobile */
     }
     
+}
+
+.DigitalMarketing_leftContainer__m2OzK {
+    border-right: 1.5px solid #d4d4d4;
+    width: 50%; /* Half-width for web layout */
+    padding: 0 2rem;
+}
+
+/* Responsive Adjustments for Mobile */
+@media (max-width: 768px) {
+    .DigitalMarketing_stroke__VzAot {
+        border-bottom: 1.5px solid #d4d4d4;
+        margin: 1rem auto; /* Center the line for mobile */
+        width: 80%; /* Centered and slightly smaller width */
+    }
+
+    .DigitalMarketing_leftContainer__m2OzK {
+        border-right: none; /* Remove the border on mobile */
+        width: 100%; /* Full width for stacked layout */
+        padding: 1rem; /* Add some spacing */
+    }
+    
+    .DigitalMarketing_wrapper__XFwBg {
+        flex-direction: column; /* Stack the containers vertically */
+    }
 }
