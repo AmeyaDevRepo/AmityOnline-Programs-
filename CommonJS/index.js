@@ -4083,16 +4083,7 @@ let InitialValue = 0;
 let finaleValue = 92;
 let speed = 10;
 
-let timer = setInterval(() => {
-	InitialValue += 1;
 
-	CircularBar.style.background = `conic-gradient(#1a325d ${InitialValue / 100 * 360}deg, #ffc907 0deg)`;
-	PercentValue.innerHTML = InitialValue + "%";
-
-	if (InitialValue >= finaleValue) {
-		clearInterval(timer);
-	}
-}, speed)
 
 
 $(".open_popup").click(function () {
@@ -4134,19 +4125,19 @@ const mobileContainer = document.getElementById('mobileContainer');
 
 // Toggle menu visibility and icons
 menuToggleButton.addEventListener('click', () => {
-	const isHamburgerVisible = hamburgerImage.style.display !== 'none';
-
-	if (isHamburgerVisible) {
-		// Hide the hamburger image, show the cross icon, and display the mobile container
-		hamburgerImage.style.display = 'none';
-		closeIcon.style.display = 'block';
-		mobileContainer.style.display = 'block';
-	} else {
-		// Show the hamburger image, hide the cross icon, and hide the mobile container
-		hamburgerImage.style.display = 'block';
-		closeIcon.style.display = 'none';
-		mobileContainer.style.display = 'none';
-	}
+    const isHamburgerVisible = hamburgerImage.style.display !== 'none';
+ 
+    if (isHamburgerVisible) {
+        // Hide the hamburger image, show the cross icon, and display the mobile container
+        hamburgerImage.style.display = 'none';
+        closeIcon.style.display = 'block';
+        mobileContainer.style.display = 'block';
+    } else {
+        // Show the hamburger image, hide the cross icon, and hide the mobile container
+        hamburgerImage.style.display = 'block';
+        closeIcon.style.display = 'none';
+        mobileContainer.style.display = 'none';
+    }
 });
 // Function to check if the device is mobile
 function isMobile() {
@@ -4517,91 +4508,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	
 
 
-	// login modal script start
-	// const studentLoginlet = true;
-	document.getElementById('loginwithotp').addEventListener('click', (e) => {
-		if (studentLoginlet) {
-			document.getElementById('phoneinputfield').style.display = 'block';
-			document.getElementById('emailinputfield').style.display = 'none';
-			document.getElementById('phoneinputfieldapplicant').style.display = 'none';
-			document.getElementById('loginwithemail').checked = false;
-			document.getElementById('loginwithotp').checked = true;
-		} else {
-			document.getElementById('phoneinputfieldapplicant').style.display = 'block';
-			document.getElementById('emailinputfield').style.display = 'none';
-			document.getElementById('phoneinputfield').style.display = 'none';
-			document.getElementById('loginwithemail').checked = false;
-			document.getElementById('loginwithotp').checked = true;
-		}
-	});
 
-	document.getElementById('loginwithemail').addEventListener('click', (e) => {
-		if (studentLoginlet) {
-			document.getElementById('emailinputfield').style.display = 'block';
-			document.getElementById('forgotPasswordBtn').style.display = 'block';
-			document.getElementById('phoneinputfield').style.display = 'none';
-			document.getElementById('phoneinputfieldapplicant').style.display = 'none';
-			document.getElementById('loginwithotp').checked = false;
-			document.getElementById('loginwithemail').checked = true;
-		} else {
-			document.getElementById('emailinputfield').style.display = 'block';
-			document.getElementById('forgotPasswordBtn').style.display = 'none';
-			document.getElementById('phoneinputfield').style.display = 'none';
-			document.getElementById('phoneinputfieldapplicant').style.display = 'none';
-			document.getElementById('loginwithotp').checked = false;
-			document.getElementById('loginwithemail').checked = true;
-
-		}
-	})
-
-
-
-	document.getElementById('studentlogin').addEventListener('click', (e) => {
-		e.preventDefault();
-		document.getElementById('applicantlogin').style = `
-       background: #fff;
-color: #1a325d`;
-
-		document.getElementById('studentlogin').style = `
-         color: #fff;
-border-color: #1a325d;
-background: #1a325d;`;
-		studentLoginlet = true;
-		handleEmailForm()
-		handlePhoneForm()
-
-
-	});
-
-	document.getElementById('applicantlogin').addEventListener('click', (e) => {
-		e.preventDefault();
-		document.getElementById('applicantlogin').style = `
-         color: #fff !important;
-border-color: #1a325d !important;
-background: #1a325d !important;`;
-		document.getElementById('studentlogin').style = `
-background: #fff;
-color: #1a325d`;
-
-		studentLoginlet = false;
-		handleEmailForm()
-		handlePhoneForm()
-
-	});
-
-	document.getElementById('forgotPasswordBtn').addEventListener('click', (e) => {
-		e.preventDefault();
-		document.getElementById('loginForm').style.display = 'none';
-		document.getElementById('forgotPasswordForm').style.display = 'block';
-
-	});
-	document.getElementById('backToLoginBtn').addEventListener('click', (e) => {
-		e.preventDefault();
-		document.getElementById('forgotPasswordForm').style.display = 'none';
-		document.getElementById('loginForm').style.display = 'block';
-
-	});
-	// login modal script end
 
 	// Call Modal Handlers
 	if (callButton && callModal) {
@@ -4826,6 +4733,19 @@ enableScroll('landingPageFacultyList');
 
 
 //   NAV JS
+
+// Sticky Plugin v1.0.4 for jQuery
+// =============
+// Author: Anthony Garand
+// Improvements by German M. Bravo (Kronuz) and Ruud Kamphuis (ruudk)
+// Improvements by Leonardo C. Daronco (daronco)
+// Created: 02/14/2011
+// Date: 07/20/2015
+// Website: http://stickyjs.com/
+// Description: Makes an element on the page stick on the screen as you scroll
+//              It will only set the 'top' and 'position' of your element, you
+//              might need to adjust the width in some cases.
+
 
 
 (function (factory) {
