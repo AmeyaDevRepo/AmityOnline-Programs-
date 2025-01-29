@@ -7894,7 +7894,7 @@ img,video {
 }
 
 .gap-\[17px\] {
-    gap: 17px
+    gap: 20px
 }
 
 .gap-\[48\.4px\] {
@@ -10651,11 +10651,12 @@ img,video {
 .Modal_root__5nZXA {
     position: fixed;
     inset: 0;
-    z-index: 10000;
+    z-index: 10000; /* Make sure it stays on top */
     display: grid;
     place-items: center;
-    overflow-y: auto
+    overflow-y: visible; /* If overflow is causing issues */
 }
+
 .ConnectModal_root__lWB_7 {
     gap: .8125rem;
     flex-direction: column
@@ -10844,7 +10845,7 @@ img,video {
     margin-left: .5rem
 }
 .ConnectModalForm_commonMargins__efaYq {
-    margin-bottom: 1.5rem
+    margin-bottom: 1.5rem;
 }
 .ConnectModalForm_emailContainer__tCa_n {
     flex-direction: column
@@ -10867,7 +10868,7 @@ img,video {
     font-weight: 500;
     line-height: 1.25rem;
     letter-spacing: .0175rem;
-    margin-left: -18px;
+    margin-left: 1px;
 }
 
 .Input_btn___g__n {
@@ -11382,7 +11383,7 @@ img,video {
         margin-left: .3333333333rem
     }
     .Input_SelectContainer__csa2O {
-        width: 100%;
+        /* width: 100%; */
         padding: 0
     }
     .ConnectModalForm_error___wYoL {
@@ -11900,7 +11901,7 @@ img,video {
     color: #1a325d;
     height: calc(100% - 20px);
     padding: .25rem;
-    overflow-y: auto
+    overflow-y: auto;
 }
 
 .header_menuItem__2qruK {
@@ -12023,7 +12024,7 @@ img,video {
     width: 100%;
     left: 0;
     right: 0;
-    top: 100px;
+    top: 120px;
     z-index: 110;
     overflow-y: auto;
     background-color: #fff;
