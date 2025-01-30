@@ -306,6 +306,7 @@ function initializeApplyModal() {
     // Apply Modal Elements Mobile
     const applyButtonMobile = document.getElementById("apply-now-btn-mobile");
 
+    
     // Event Listeners
     applyCloseButton?.addEventListener('click', () => applyModal.style.display = 'none');
     window.addEventListener('click', (event) => {
@@ -387,9 +388,40 @@ function initializeApplyModal() {
 }
 
 function initializeProgramsModal() {
-    const programsDiv = document.getElementById("programsDiv");
-    const closeButton = document.getElementById("closeButton");
+    // const programsDiv = document.getElementById("programsDiv");
+    // const closeButton = document.getElementById("closeButton");
     const programsButton = document.getElementById("programsLink"); // Add ID to your programs button
+
+    const programsLink = document.getElementById('programsLink');
+const programsDiv = document.getElementById('programsDiv');
+const closeButton = document.getElementById('closeButton');
+
+// Show the programsDiv when 'PROGRAMS' link is clicked
+programsLink.addEventListener('click', function (e) {
+	e.preventDefault();
+	programsDiv.style.display = 'block';  // Show the div
+	document.body.style.overflow = 'hidden';  // Hide the scrollbar
+});
+	// Select all menu items
+	const menuItems = document.querySelectorAll(".ProgramsMenu_item__mfuSn");
+
+	// Add click event listener to each menu item
+	menuItems.forEach((item) => {
+		item.addEventListener("click", function () {
+			// Remove the active class from all items
+			menuItems.forEach((el) =>
+				el.classList.remove("ProgramsMenu_active__4g64w")
+			);
+
+			// Add the active class to the clicked item
+			item.classList.add("ProgramsMenu_active__4g64w");
+		});
+	});
+// Close the programsDiv when close icon is clicked
+closeButton.addEventListener('click', function () {
+	programsDiv.style.display = 'none';  // Hide the div
+	document.body.style.overflow = 'auto';  // Restore the scrollbar
+});
 
     // Desktop Close
     closeButton?.addEventListener('click', () => {
@@ -428,21 +460,21 @@ const closeIcon = document.getElementById('closeIcon');
 const mobileContainer = document.getElementById('mobileContainer');
 
 // Toggle menu visibility and icons
-// menuToggleButton.addEventListener('click', () => {
-//     const isHamburgerVisible = hamburgerImage.style.display !== 'none';
+menuToggleButton.addEventListener('click', () => {
+    const isHamburgerVisible = hamburgerImage.style.display !== 'none';
  
-//     if (isHamburgerVisible) {
-//         // Hide the hamburger image, show the cross icon, and display the mobile container
-//         hamburgerImage.style.display = 'none';
-//         closeIcon.style.display = 'block';
-//         mobileContainer.style.display = 'block';
-//     } else {
-//         // Show the hamburger image, hide the cross icon, and hide the mobile container
-//         hamburgerImage.style.display = 'block';
-//         closeIcon.style.display = 'none';
-//         mobileContainer.style.display = 'none';
-//     }
-// });
+    if (isHamburgerVisible) {
+        // Hide the hamburger image, show the cross icon, and display the mobile container
+        hamburgerImage.style.display = 'none';
+        closeIcon.style.display = 'block';
+        mobileContainer.style.display = 'block';
+    } else {
+        // Show the hamburger image, hide the cross icon, and hide the mobile container
+        hamburgerImage.style.display = 'block';
+        closeIcon.style.display = 'none';
+        mobileContainer.style.display = 'none';
+    }
+});
 // Function to check if the device is mobile
 function isMobile() {
 	return window.innerWidth <= 1024;  // Adjust this value based on your mobile breakpoint
