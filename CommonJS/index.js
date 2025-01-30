@@ -5335,3 +5335,43 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+
+// Get references to DOM elements
+const programsMenuItem = document.querySelector('.header_menuItem__2qruK a[href="#"]');
+const programsMenu = document.querySelector('.ProgramsMenu_mobile__K4seG');
+
+// Toggle programs menu visibility
+programsMenuItem.addEventListener('click', (e) => {
+  e.preventDefault();
+  const isVisible = programsMenu.style.display === 'block';
+  programsMenu.style.display = isVisible ? 'none' : 'block';
+});
+
+// Handle back button
+const backButton = document.querySelector('.ProgramsMenu_submenuArrow__gnbLw');
+backButton.addEventListener('click', () => {
+  // Hide current content and show main menu
+  document.querySelectorAll('.ProgramsMenu_contentBox__UHi_e').forEach(el => {
+    el.style.display = 'none';
+  });
+  document.querySelector('.ProgramsMenu_sidemenu__frHFk').style.display = 'block';
+});
+
+// Handle menu item clicks
+document.querySelectorAll('.ProgramsMenu_item__mfuSn').forEach(item => {
+  item.addEventListener('click', () => {
+    // Hide main menu and show appropriate content
+    document.querySelector('.ProgramsMenu_sidemenu__frHFk').style.display = 'none';
+    const target = item.querySelector('span').textContent.trim();
+    // Add logic to show the correct content box based on the clicked item
+  });
+});
+
+// Close other menu items when opening programs
+const otherMenuItems = document.querySelectorAll('.header_menuItem__2qruK:not(:first-child)');
+otherMenuItems.forEach(item => {
+  item.addEventListener('click', () => {
+    programsMenu.style.display = 'none';
+  });
+});
