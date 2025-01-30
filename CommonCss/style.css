@@ -2,6 +2,8 @@
 
 /* Nav-Style */
 
+
+
 body:before {
     content: "";
     position: absolute;
@@ -5990,9 +5992,6 @@ div#Carousel .swiper-button-next:after,div#Carousel .swiper-button-prev:after {
         margin-top: 0
     }
 }
-#passwordSection {
-    transition: opacity 0.2s ease;
-  }
 
 .Form_group__rP395 label {
     display: block;
@@ -9440,60 +9439,22 @@ img,video {
     background-size: 53px
 }
 
-.StudentsCarousel_testimonialBox__hp3K9 {
-    padding-bottom: 1.25rem
-}
+
 
 .StudentsCarousel_carousel__XLxe_ {
     width: 100%
 }
 
-.StudentsCarousel_cardImage__gmfV6 {
-    width: 100%;
-    height: 100%;
-    -o-object-fit: cover;
-    object-fit: cover
-}
 
-.StudentsCarousel_cardContent__8xZ_A {
-    padding: 1.6875rem
-}
 
-.StudentsCarousel_cardImageContainer__utpKq {
-    border-right: .09375rem solid var(--P-Blue, #1a325d);
-    border-color: var(--primary-blue)
-}
 
-.StudentsCarousel_shortDesc__uFLAJ {
-    color: var(--P-Blue, #1a325d);
-    font-family: var(--font-raleway);
-    font-size: 1.25rem;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 138.9%;
-    letter-spacing: .4px
-}
 
-.StudentsCarousel_name__CbzkO {
-    color: var(--P-Blue, #1a325d);
-    font-family: var(--font-baskervville);
-    font-size: 2.1875rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 43.621px;
-    letter-spacing: -.698px;
-    margin-top: .625rem
-}
 
-.StudentsCarousel_desg__5N20_ {
-    color: var(--P-Blue, #1a325d);
-    font-family: var(--font-raleway);
-    font-size: 1.0625rem;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 119.9%;
-    letter-spacing: 1.047px
-}
+
+
+
+
+
 
 .StudentsCarousel_videoImg__wjfQA {
     max-height: 22.375rem;
@@ -9532,27 +9493,13 @@ img,video {
         max-height: 14.9166666667rem
     }
 
-    .StudentsCarousel_testimonialBox__hp3K9 {
-        padding-bottom: 1.0416666667rem
-    }
+   
 
-    .StudentsCarousel_cardContent__8xZ_A {
-        padding: 1.125rem 1.25rem
-    }
+    
 
-    .StudentsCarousel_shortDesc__uFLAJ {
-        font-size: .8333333333rem
-    }
+    
 
-    .StudentsCarousel_name__CbzkO {
-        display: block;
-        margin-top: .625rem;
-        font-size: 1.4583333333rem
-    }
-
-    .StudentsCarousel_desg__5N20_ {
-        font-size: .7083333333rem
-    }
+    
 }
 
 .styles_root__Yu_Om {
@@ -9841,7 +9788,8 @@ img,video {
 .AdvantageCard_AdvantageCard__container__bvEfL {
     border-radius: 1rem;
     border: .09375rem solid var(--P-Blue, #1a325d);
-    margin: auto
+    margin: auto;
+    width:180px
 }
 
 .AdvantageCard_AdvantageCard__image__K5DFL {

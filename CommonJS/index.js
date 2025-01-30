@@ -5170,3 +5170,168 @@ $(function () {
 
 // common JS
 
+class Carousel {
+	constructor(container) {
+		this.container = container;
+		this.track = container.querySelector('.carousel-track');
+		this.slides = container.querySelectorAll('.carousel-slide');
+		this.buttons = container.querySelectorAll('.carousel-button');
+		this.dots = container.querySelector('.carousel-dots');
+		this.currentIndex = 0;
+		this.slidesPerView = this.getSlidesPerView();
+		
+		this.init();
+	}
+
+	init() {
+		// Create dots
+		this.slides.forEach((_, index) => {
+			const dot = document.createElement('div');
+			dot.classList.add('carousel-dot');
+			if (index === 0) dot.classList.add('active');
+			dot.addEventListener('click', () => this.goToSlide(index));
+			this.dots.appendChild(dot);
+		});
+
+		// Add button listeners
+		this.buttons[0].addEventListener('click', () => this.prev());
+		this.buttons[1].addEventListener('click', () => this.next());
+
+		// Add resize listener
+		window.addEventListener('resize', () => {
+			this.slidesPerView = this.getSlidesPerView();
+			this.updateCarousel();
+		});
+
+		this.updateCarousel();
+	}
+
+	getSlidesPerView() {
+		if (window.innerWidth >= 1024) return 3;
+		if (window.innerWidth >= 768) return 2;
+		return 1;
+	}
+
+	updateCarousel() {
+		const slideWidth = 100 / this.slidesPerView;
+		this.slides.forEach(slide => {
+			slide.style.flex = `0 0 ${slideWidth}%`;
+		});
+		this.goToSlide(this.currentIndex);
+	}
+
+	goToSlide(index) {
+		const maxIndex = this.slides.length - this.slidesPerView;
+		this.currentIndex = Math.max(0, Math.min(index, maxIndex));
+		const offset = -this.currentIndex * (100 / this.slidesPerView);
+		this.track.style.transform = `translateX(${offset}%)`;
+		
+		// Update dots
+		this.dots.querySelectorAll('.carousel-dot').forEach((dot, i) => {
+			dot.classList.toggle('active', i === this.currentIndex);
+		});
+	}
+
+	prev() {
+		this.goToSlide(this.currentIndex - 1);
+	}
+
+	next() {
+		this.goToSlide(this.currentIndex + 1);
+	}
+}
+
+// Initialize carousel
+document.addEventListener('DOMContentLoaded', () => {
+	const carousel = new Carousel(document.querySelector('.carousel-container'));
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const swiper = new Swiper('.swiper2', {
+        // Optional parameters
+        slidesPerView: 'auto',
+        spaceBetween: 20,
+        loop: false,
+        
+        // Responsive breakpoints
+        breakpoints: {
+            // when window width is >= 320px
+            320: {
+                slidesPerView: 1,
+                spaceBetween: 20
+            },
+            // when window width is >= 480px
+            480: {
+                slidesPerView: 2,
+                spaceBetween: 20
+            },
+            // when window width is >= 768px
+            768: {
+                slidesPerView: 3,
+                spaceBetween: 20
+            },
+            // when window width is >= 1024px
+            1024: {
+                slidesPerView: 5,
+                spaceBetween: 20
+            }
+        },
+
+        // If we need pagination
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true
+        },
+
+        // Navigation arrows (optional)
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        }
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const swiper = new Swiper('.swiper', {
+        // Optional parameters
+        slidesPerView: 'auto',
+        spaceBetween: 20,
+        loop: false,
+        
+        // Responsive breakpoints
+        breakpoints: {
+            // when window width is >= 320px
+            320: {
+                slidesPerView: 1,
+                spaceBetween: 20
+            },
+            // when window width is >= 480px
+            480: {
+                slidesPerView: 2,
+                spaceBetween: 20
+            },
+            // when window width is >= 768px
+            768: {
+                slidesPerView: 3,
+                spaceBetween: 20
+            },
+            // when window width is >= 1024px
+            1024: {
+                slidesPerView: 4,
+                spaceBetween: 20
+            }
+        },
+
+        // If we need pagination
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true
+        },
+
+        // Navigation arrows (optional)
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        }
+    });
+});
