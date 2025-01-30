@@ -5990,6 +5990,9 @@ div#Carousel .swiper-button-next:after,div#Carousel .swiper-button-prev:after {
         margin-top: 0
     }
 }
+#passwordSection {
+    transition: opacity 0.2s ease;
+  }
 
 .Form_group__rP395 label {
     display: block;

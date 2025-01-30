@@ -4424,6 +4424,88 @@ document.addEventListener("DOMContentLoaded", () => {
 		applyModal.style.display = 'block';  // Show the modal
 	});
 
+	document.getElementById('loginwithotp').addEventListener('click', (e) => {
+		if (studentLoginlet) {
+			document.getElementById('phoneinputfield').style.display = 'block';
+			document.getElementById('emailinputfield').style.display = 'none';
+			document.getElementById('phoneinputfieldapplicant').style.display = 'none';
+			document.getElementById('loginwithemail').checked = false;
+			document.getElementById('loginwithotp').checked = true;
+		} else {
+			document.getElementById('phoneinputfieldapplicant').style.display = 'block';
+			document.getElementById('emailinputfield').style.display = 'none';
+			document.getElementById('phoneinputfield').style.display = 'none';
+			document.getElementById('loginwithemail').checked = false;
+			document.getElementById('loginwithotp').checked = true;
+		}
+	});
+
+	document.getElementById('loginwithemail').addEventListener('click', (e) => {
+		if (studentLoginlet) {
+			document.getElementById('emailinputfield').style.display = 'block';
+			document.getElementById('forgotPasswordBtn').style.display = 'block';
+			document.getElementById('phoneinputfield').style.display = 'none';
+			document.getElementById('phoneinputfieldapplicant').style.display = 'none';
+			document.getElementById('loginwithotp').checked = false;
+			document.getElementById('loginwithemail').checked = true;
+		} else {
+			document.getElementById('emailinputfield').style.display = 'block';
+			document.getElementById('forgotPasswordBtn').style.display = 'none';
+			document.getElementById('phoneinputfield').style.display = 'none';
+			document.getElementById('phoneinputfieldapplicant').style.display = 'none';
+			document.getElementById('loginwithotp').checked = false;
+			document.getElementById('loginwithemail').checked = true;
+
+		}
+	})
+
+
+
+	document.getElementById('studentlogin').addEventListener('click', (e) => {
+		e.preventDefault();
+		document.getElementById('applicantlogin').style = `
+       background: #fff;
+color: #1a325d`;
+
+		document.getElementById('studentlogin').style = `
+         color: #fff;
+border-color: #1a325d;
+background: #1a325d;`;
+		studentLoginlet = true;
+		handleEmailForm()
+		handlePhoneForm()
+
+
+	});
+
+	document.getElementById('applicantlogin').addEventListener('click', (e) => {
+		e.preventDefault();
+		document.getElementById('applicantlogin').style = `
+         color: #fff !important;
+border-color: #1a325d !important;
+background: #1a325d !important;`;
+		document.getElementById('studentlogin').style = `
+background: #fff;
+color: #1a325d`;
+
+		studentLoginlet = false;
+		handleEmailForm()
+		handlePhoneForm()
+
+	});
+
+	document.getElementById('forgotPasswordBtn').addEventListener('click', (e) => {
+		e.preventDefault();
+		document.getElementById('loginForm').style.display = 'none';
+		document.getElementById('forgotPasswordForm').style.display = 'block';
+
+	});
+	document.getElementById('backToLoginBtn').addEventListener('click', (e) => {
+		e.preventDefault();
+		document.getElementById('forgotPasswordForm').style.display = 'none';
+		document.getElementById('loginForm').style.display = 'block';
+
+	});
 	// Optionally, close the modal if clicked outside the modal content
 	window.addEventListener('click', function (event) {
 		if (event.target === applyModal) {
