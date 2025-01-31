@@ -2,38 +2,130 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="images/fav.png">
+  <!-- Metadata -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css"
-        integrity="sha512-SbiR/eusphKoMVVXysTKG/7VseWii+Y3FdHrt0EpKgpToZeemhqHeZeLWLhJutz/2ut2Vw1uQEj2MbRF+TVBUA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer">
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/line-awesome/1.3.0/line-awesome/css/line-awesome.min.css"
-        integrity="sha512-vebUliqxrVkBy3gucMhClmyQP9On/HAWQdKDXRaAlb/FKuTbxkjPKUyqVOxAcGwFDka79eTF+YXwfke1h3/wfg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer">
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <!-- Navigation CSS -->
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/fav.png">
 
-    <link rel="stylesheet" href="./../CommonCss/style.css">
+  <!-- Fonts Preconnect for Optimization -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
 
+  <!-- Font Awesome (Icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer">
 
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css"
+    integrity="sha512-SbiR/eusphKoMVVXysTKG/7VseWii+Y3FdHrt0EpKgpToZeemhqHeZeLWLhJutz/2ut2Vw1uQEj2MbRF+TVBUA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer">
 
+  <!-- Line Awesome (Icons) -->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/line-awesome/1.3.0/line-awesome/css/line-awesome.min.css"
+    integrity="sha512-vebUliqxrVkBy3gucMhClmyQP9On/HAWQdKDXRaAlb/FKuTbxkjPKUyqVOxAcGwFDka79eTF+YXwfke1h3/wfg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer">
 
-    <title>Amity Online</title>
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="./../CommonCss/style.css">
+  <link rel="stylesheet" href="./amityOnline.css">
+  <!-- Swiper CSS -->
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+<!-- Swiper JS -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <style>
+    /* Hide desktop carousel on mobile */
+    @media (max-width: 1199px) {
+      .desktop-carousel {
+        display: none;
+      }
+      .mobile-carousels {
+        display: block;
+      }
+    }
+  
+    /* Hide mobile carousels on desktop */
+    @media (min-width: 1200px) {
+      .mobile-carousels {
+        display: none;
+      }
+    }
+  
+    /* Mobile carousel styling */
+    .mobile-carousels .swiper {
+      padding-bottom: 40px;
+    }
+    .testimonial-card {
+      border: 1px solid #1a325d;
+      border-radius: 16px;
+      margin: 16px;
+      padding: 16px;
+    }
+    .video-card {
+      height: 250px;
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      margin: 16px;
+    }
+  </style>
+  <style>
+    .mobile-testimonial-card {
+      border: 1px solid #1a325d;
+      border-radius: 16px;
+      margin: 16px;
+      overflow: hidden;
+    }
+    
+    .mobile-testimonial-image {
+      width: 100%;
+      height: 300px;
+      position: relative;
+    }
+    
+    .mobile-testimonial-image img {
+      width: 100%;
+      height: 100%;
+      object-fit:fill;
+    }
+    
+    .mobile-testimonial-content {
+      padding: 16px;
+      text-align: center;
+    }
+    
+    .mobile-testimonial-name {
+      font-size: 1.25rem;
+      font-weight: bold;
+      color: #1a325d;
+      margin-bottom: 8px;
+    }
+    
+    .mobile-testimonial-course {
+      color: #686868;
+      font-size: 0.875rem;
+      margin-bottom: 12px;
+    }
+    
+    .mobile-testimonial-text {
+      color: #1a325d;
+      font-size: 0.9375rem;
+      line-height: 1.4;
+    }
+  </style>
+
+  <!-- Page Title -->
+  <title>Amity Online</title>
 </head>
 
 <body>
@@ -3704,120 +3796,184 @@
             </div>
         </div>
     </div>
-    <div class="container">
-        <div class="SectionCard_root__vJRVT SectionCard_card__76a8h">
-            <div class="heading-block">
-                <h2 style="    color: var(--P-Blue, #1a325d);
-">Our Recruiters</h2>
-                <p>These are our trusted recruitment <br>
-                    collaborators for hiring students</p>
+   
+    <section class="overflow-x-hidden">
+        <div class="container">
+          <div class="SectionCard_root__vJRVT SectionCard_card__76a8h">
+            <div class="flex justify-between lining-nums lg:items-center flex-col lg:flex-row lg:align-center">
+              <h2 class="SectionCard_title__DSA2A">Our recruiters
+              </h2>
+              <p class="SectionCard_subtitle__vVqmD hidden lg:block">These are our trusted recruitment<!-- -->
+                <br>collaborators for hiring students</p>
+              <p class="SectionCard_subtitle__vVqmD block lg:hidden">These are our trusted recruitment collaborators for
+                hiring students
+              </p>
             </div>
             <div class="SectionCard_hr__sFh5X"></div>
             <div class="pt-7 lg:pt-7">
-                <h2>
-                    <div class="Carousel ">
-                        <div
-                            class="swiper2 swiper-initialized swiper-horizontal Carousel__blueBullet Carousel__newsletter Carousel__flex swiper-backface-hidden">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide swiper-slide-active"
-                                    style="width: 107.8px; margin-right: 125px;">
-                                    <div class="HiringPartenersCard mb-14"><img alt="MatLife" title="Hiring Partner"
-                                            loading="lazy" width="143" height="98" decoding="async" data-nimg="1"
-                                            class="h-[54px] lg:h-[98px] lg:w-full object-contain"
-                                            style="color:transparent"
-                                            srcset="https://amityonline.com/_next/image?url=https%3A%2F%2Famityonline.com%2F_s%2Fdownload_1_89a84250e2_05e861e94e.webp&w=384&q=75"
-                                            src="https://amityonline.com/_next/image?url=https%3A%2F%2Famityonline.com%2F_s%2Fdownload_1_89a84250e2_05e861e94e.webp&w=384&q=75">
-                                    </div>
-                                    <div class="HiringPartenersCard mb-14"><img alt="Spicejet" title="Hiring Partner"
-                                            loading="lazy" width="143" height="98" decoding="async" data-nimg="1"
-                                            class="h-[54px] lg:h-[98px] lg:w-full object-contain"
-                                            style="color:transparent"
-                                            srcset="https://amityonline.com/_next/image?url=https%3A%2F%2Famityonline.com%2F_s%2FSpice_Jet_Logo_1_c5ba24bc8c_69a3cda9d9.webp&w=384&q=75"
-                                            src="https://amityonline.com/_next/image?url=https%3A%2F%2Famityonline.com%2F_s%2FSpice_Jet_Logo_1_c5ba24bc8c_69a3cda9d9.webp&w=384&q=75">
-                                    </div>
-                                </div>
-                                <div class="swiper-slide swiper-slide-next"
-                                    style="width: 107.8px; margin-right: 125px;">
-                                    <div class="HiringPartenersCard mb-14"><img alt="Samsung" title="Hiring Partner"
-                                            loading="lazy" width="143" height="98" decoding="async" data-nimg="1"
-                                            class="h-[54px] lg:h-[98px] lg:w-full object-contain"
-                                            style="color:transparent"
-                                            srcset="https://amityonline.com/_next/image?url=https%3A%2F%2Famityonline.com%2F_s%2FSamsung_Logo_1_746aab70d3_cc9060f7f9.webp&w=384&q=75"
-                                            src="https://amityonline.com/_next/image?url=https%3A%2F%2Famityonline.com%2F_s%2FSamsung_Logo_1_746aab70d3_cc9060f7f9.webp&w=384&q=75">
-                                    </div>
-                                    <div class="HiringPartenersCard mb-14"><img alt="Microsoft" title="Hiring Partner"
-                                            loading="lazy" width="143" height="98" decoding="async" data-nimg="1"
-                                            class="h-[54px] lg:h-[98px] lg:w-full object-contain"
-                                            style="color:transparent"
-                                            srcset="https://amityonline.com/_next/image?url=https%3A%2F%2Famityonline.com%2F_s%2FMicrosoft_logo_2012_2_48376945dd_a6bed4337d.webp&w=384&q=75"
-                                            src="https://amityonline.com/_next/image?url=https%3A%2F%2Famityonline.com%2F_s%2FMicrosoft_logo_2012_2_48376945dd_a6bed4337d.webp&w=384&q=75">
-                                    </div>
-                                </div>
-                                <div class="swiper-slide" style="width: 107.8px; margin-right: 125px;">
-                                    <div class="HiringPartenersCard mb-14"><img alt="Nokia" title="Hiring Partner"
-                                            loading="lazy" width="143" height="98" decoding="async" data-nimg="1"
-                                            class="h-[54px] lg:h-[98px] lg:w-full object-contain"
-                                            style="color:transparent"
-                                            srcset="https://amityonline.com/_next/image?url=https%3A%2F%2Famityonline.com%2F_s%2FNokia_wordmark_1_0fff137931_34cf6a0a14.webp&w=384&q=75"
-                                            src="https://amityonline.com/_next/image?url=https%3A%2F%2Famityonline.com%2F_s%2FNokia_wordmark_1_0fff137931_34cf6a0a14.webp&w=384&q=75">
-                                    </div>
-                                    <div class="HiringPartenersCard mb-14"><img alt="IBM" title="Hiring Partner"
-                                            loading="lazy" width="143" height="98" decoding="async" data-nimg="1"
-                                            class="h-[54px] lg:h-[98px] lg:w-full object-contain"
-                                            style="color:transparent"
-                                            srcset="https://amityonline.com/_next/image?url=https%3A%2F%2Famityonline.com%2F_s%2FIBM_logo_1_05ca2e1954_700d26df84.webp&w=384&q=75"
-                                            src="https://amityonline.com/_next/image?url=https%3A%2F%2Famityonline.com%2F_s%2FIBM_logo_1_05ca2e1954_700d26df84.webp&w=384&q=75">
-                                    </div>
-                                </div>
-                                <div class="swiper-slide" style="width: 107.8px; margin-right: 125px;">
-                                    <div class="HiringPartenersCard mb-14"><img alt="Adobe" title="Hiring Partner"
-                                            loading="lazy" width="143" height="98" decoding="async" data-nimg="1"
-                                            class="h-[54px] lg:h-[98px] lg:w-full object-contain"
-                                            style="color:transparent"
-                                            srcset="https://amityonline.com/_next/image?url=https%3A%2F%2Famityonline.com%2F_s%2FAdobe_logo_1_ac9e9833e0_301d0a68ec.webp&w=384&q=75"
-                                            src="https://amityonline.com/_next/image?url=https%3A%2F%2Famityonline.com%2F_s%2FAdobe_logo_1_ac9e9833e0_301d0a68ec.webp&w=384&q=75">
-                                    </div>
-                                    <div class="HiringPartenersCard mb-14"><img alt="Google" title="Hiring Partner"
-                                            loading="lazy" width="143" height="98" decoding="async" data-nimg="1"
-                                            class="h-[54px] lg:h-[98px] lg:w-full object-contain"
-                                            style="color:transparent"
-                                            srcset="https://amityonline.com/_next/image?url=https%3A%2F%2Famityonline.com%2F_s%2F580b57fcd9996e24bc43c51f_1_95a1fc7756_42f35c2655.webp&w=384&q=75"
-                                            src="https://amityonline.com/_next/image?url=https%3A%2F%2Famityonline.com%2F_s%2F580b57fcd9996e24bc43c51f_1_95a1fc7756_42f35c2655.webp&w=384&q=75">
-                                    </div>
-                                </div>
-                                <div class="swiper-slide" style="width: 107.8px; margin-right: 125px;">
-                                    <div class="HiringPartenersCard mb-14"><img alt="Genpact" title="Hiring Partner"
-                                            loading="lazy" width="143" height="98" decoding="async" data-nimg="1"
-                                            class="h-[54px] lg:h-[98px] lg:w-full object-contain"
-                                            style="color:transparent"
-                                            srcset="https://amityonline.com/_next/image?url=https%3A%2F%2Famityonline.com%2F_s%2Fgenpact_56d8e5390a_94aff17793.webp&w=384&q=75"
-                                            src="https://amityonline.com/_next/image?url=https%3A%2F%2Famityonline.com%2F_s%2Fgenpact_56d8e5390a_94aff17793.webp&w=384&q=75">
-                                    </div>
-                                    <div class="HiringPartenersCard mb-14"><img alt="McDonalds" title="Hiring Partner"
-                                            loading="lazy" width="143" height="98" decoding="async" data-nimg="1"
-                                            class="h-[54px] lg:h-[98px] lg:w-full object-contain"
-                                            style="color:transparent"
-                                            src="https://amityonline.com/_sb/image_10268_d0452c1cc9.svg"></div>
-                                </div>
+              <div>
+                <div class="Carousel ">
+                  <div
+                    class="swiper swiper-initialized swiper-horizontal Carousel__blueBullet Carousel__newsletter Carousel__flex swiper-backface-hidden">
+                    <div class="swiper-wrapper" style="transition-duration: 0ms; transform: translate3d(-428px, 0px, 0px); transition-delay: 0ms;">
+                      <div class="swiper-slide " style="">
+                        <div class="HiringPartenersCard"><img alt="Hiring Partner" title="Hiring Partner" loading="lazy"
+                            width="143" height="98" decoding="async" data-nimg="1"
+                            class="" style="color:transparent"
+                            srcset=" ./images/images/download_1_89a84250e2_4b405390f1.webp"
+                            src=" ./images/images/download_1_89a84250e2_4b405390f1.webp">
                             </div>
-                            <div
-                                class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal swiper-pagination-lock">
-                                <span class="swiper-pagination-bullet swiper-pagination-bullet-active"></span>
+                        <div class="HiringPartenersCard"><img alt="Hiring Partner" title="Hiring Partner" loading="lazy"
+                            width="143" height="98" decoding="async" data-nimg="1"
+                            class="" style="color:transparent"
+                            srcset=" ./images/images/Frame_1171278251_b34cf6b608.webp"
+                            src=" ./images/images/Frame_1171278251_b34cf6b608.webp">
+                           </div>
+                           </div>
+                      <div class="swiper-slide " >
+                           <div class="HiringPartenersCard"><img alt="Hiring Partner" title="Hiring Partner" loading="lazy"
+                            width="143" height="98" decoding="async" data-nimg="1"
+                            class="" style="color:transparent"
+                            srcset=" ./images/images/Frame_1171278252_3a60463e81.webp"
+                            src=" ./images/images/Frame_1171278252_3a60463e81.webp">
+                             </div>
+                        <div class="HiringPartenersCard"><img alt="Hiring Partner" title="Hiring Partner" loading="lazy"
+                            width="143" height="98" decoding="async" data-nimg="1"
+                            class="" style="color:transparent"
+                            srcset=" ./images/images/Frame_1171278254_cbacd77ccb.webp"
+                            src=" ./images/images/Frame_1171278254_cbacd77ccb.webp">
+                           </div>
+                      </div> 
+                      <div class="swiper-slide" >
+                        <div class="HiringPartenersCard"><img alt="Hiring Partner" title="Hiring Partner" loading="lazy"
+                            width="143" height="98" decoding="async" data-nimg="1"
+                            class="" style="color:transparent"
+                            srcset=" ./images/images/Frame_1171278259_27dbfa67fa.webp"
+                            src=" ./images/images/Frame_1171278259_27dbfa67fa.webp">
+                          </div>
+                        <div class="HiringPartenersCard"><img alt="Hiring Partner" title="Hiring Partner" loading="lazy"
+                            width="143" height="98" decoding="async" data-nimg="1"
+                            class="" style="color:transparent"
+                            srcset=" ./images/images/Frame_1171278258_70bee71ff5.webp"
+                            src=" ./images/images/Frame_1171278258_70bee71ff5.webp">
+                           </div>
+                      </div>
+                      <div class="swiper-slide" >
+                        <div class="HiringPartenersCard"><img alt="Hiring Partner" title="Hiring Partner" loading="lazy"
+                            width="143" height="98" decoding="async" data-nimg="1"
+                            class="" style="color:transparent"
+                            srcset=" ./images/images/Frame_1171278257_577b24e6c6.webp"
+                            src=" ./images/images/Frame_1171278257_577b24e6c6.webp">
+                           </div>
+                        <div class="HiringPartenersCard"><img alt="Hiring Partner" title="Hiring Partner" loading="lazy"
+                            width="143" height="98" decoding="async" data-nimg="1"
+                            class="" style="color:transparent"
+                            srcset=" ./images/images/Frame_1171278250_02eaa8cf5d.webp"
+                            src=" ./images/images/Frame_1171278250_02eaa8cf5d.webp">
+                          </div>
+                      </div>
+                      <div class="swiper-slide swiper-slide-prev" >
+                        <div class="HiringPartenersCard"><img alt="Hiring Partner" title="Hiring Partner" loading="lazy"
+                            width="143" height="98" decoding="async" data-nimg="1"
+                            class="" style="color:transparent"
+                            srcset=" ./images/images/Frame_1171278255_b060356ba0.webp"
+                            src=" ./images/images/Frame_1171278255_b060356ba0.webp">
+                           </div>
+                        <div class="HiringPartenersCard"><img alt="Hiring Partner" title="Hiring Partner" loading="lazy"
+                            width="143" height="98" decoding="async" data-nimg="1"
+                            class="" style="color:transparent"
+                            srcset=" ./images/images/Frame_1171278256_cffdba0535.webp"
+                            src=" ./images/images/Frame_1171278256_cffdba0535.webp">
+                          </div>
+                      </div>
+                      <div class="swiper-slide swiper-slide-active" >
+                        <div class="HiringPartenersCard"><img alt="Hiring Partner" title="Hiring Partner" loading="lazy"
+                            width="143" height="98" decoding="async" data-nimg="1"
+                            class="" style="color:transparent"
+                            srcset=" ./images/images/Frame_1171278253_944094581b.webp"
+                            src=" ./images/images/Frame_1171278253_944094581b.webp">
+                          </div>
+                        <div class="HiringPartenersCard"><img alt="Hiring Partner" title="Hiring Partner" loading="lazy"
+                            width="143" height="98" decoding="async" data-nimg="1"
+                            class="" style="color:transparent"
+                            srcset=" ./images/images/Frame_1171278248_a45997b4a7.webp"
+                            src=" ./images/images/Frame_1171278248_a45997b4a7.webp">
+                           </div>
+                      </div>
+                      <div class="swiper-slide swiper-slide-next" >
+                        <div class="HiringPartenersCard"><img alt="Hiring Partner" title="Hiring Partner" loading="lazy"
+                            width="143" height="98" decoding="async" data-nimg="1"
+                            class="" style="color:transparent"
+                            srcset=" ./images/images/tcs_36389f49b8.webp"
+                            src=" ./images/images/tcs_36389f49b8.webp">
+                           </div>
+                        <div class="HiringPartenersCard"><img alt="Hiring Partner" title="Hiring Partner" loading="lazy"
+                            width="143" height="98" decoding="async" data-nimg="1"
+                            class="" style="color:transparent"
+                            srcset=" ./images/images/Frame_1171278245_7aabd1576e.webp"
+                            src=" ./images/images/Frame_1171278245_7aabd1576e.webp">
+                          </div>
+                      </div>
+                      <div class="swiper-slide" >
+                        <div class="HiringPartenersCard"><img alt="Hiring Partner" title="Hiring Partner" loading="lazy"
+                            width="143" height="98" decoding="async" data-nimg="1"
+                            class="" style="color:transparent"
+                            srcset=" ./images/images/american_express_727870ccfd.webp"
+                            src=" ./images/images/american_express_727870ccfd.webp">
+                           </div>
+                        <div class="HiringPartenersCard"><img alt="Hiring Partner" title="Hiring Partner" loading="lazy"
+                            width="143" height="98" decoding="async" data-nimg="1"
+                            class="" style="color:transparent"
+                            srcset=" ./images/images/apollo_8e9edd93d8.webp"
+                            src=" ./images/images/apollo_8e9edd93d8.webp">
+                           </div>
+                      </div>
+                      <div class="swiper-slide" >
+                        <div class="HiringPartenersCard"><img alt="Hiring Partner" title="Hiring Partner" loading="lazy"
+                            width="143" height="98" decoding="async" data-nimg="1"
+                            class="" style="color:transparent"
+                            srcset=" ./images/images/genpact_00bfd2769b.webp"
+                            src=" ./images/images/genpact_00bfd2769b.webp">
                             </div>
-                        </div>
+                        <div class="HiringPartenersCard"><img alt="Hiring Partner" title="Hiring Partner" loading="lazy"
+                            width="143" height="98" decoding="async" data-nimg="1"
+                            class="" style="color:transparent"
+                            srcset=" ./images/images/google_48aa9da7e0.webp"
+                            src=" ./images/images/google_48aa9da7e0.webp">
+                            </div>
+                      </div>
+                      <div class="swiper-slide" >
+                        <div class="HiringPartenersCard"><img alt="Hiring Partner" title="Hiring Partner" loading="lazy"
+                            width="143" height="98" decoding="async" data-nimg="1"
+                            class="" style="color:transparent"
+                            srcset=" ./images/images/hdfc_c666fbb983.webp"
+                            src=" ./images/images/hdfc_c666fbb983.webp">
+                            </div>
+                        <div class="HiringPartenersCard"><img alt="Hiring Partner" title="Hiring Partner" loading="lazy"
+                            width="143" height="98" decoding="async" data-nimg="1"
+                            class="" style="color:transparent"
+                            srcset=" ./images/images/ibm_89d83aa08b.webp"
+                            src=" ./images/images/ibm_89d83aa08b.webp">
+                           </div>
+                      </div>
                     </div>
-                </h2>
+                     <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal">
+                      <span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet swiper-pagination-bullet-active"></span></div>
+                  </div> 
+                  <div class="swiper-pagination"></div>
+  
+                </div>
+              </div>
             </div>
+          </div>
         </div>
-    </div>
+      </section>
     <section class="undefined">
         <div class="container">
             <div class="SectionCard_root__vJRVT">
                 <div class="heading-block">
-                    <h2 style="    color: var(--P-Blue, #1a325d);
-">Industries We Cover</h2>
-                    <p>Competitive packages offered by hiring <br>
-                        partner, in alignment with market standards</p>
+                    <h2 style="    color: var(--P-Blue, #1a325d);">Industries We Cover</h2>
+                    <p>Competitive packages offered by hiring <br> partner, in alignment with market standards</p>
                 </div>
                 <div class="SectionCard_hr__sFh5X"></div>
                 <div class="pt-7 lg:pt-7">
@@ -4003,77 +4159,73 @@
             </div>
         </div>
     </section>
-    <div class="SectionCard_root__vJRVT">
-        <div class="flex justify-between lining-nums lg:items-center flex-col lg:flex-row lg:align-center">
-            <h2 class="SectionCard_title__DSA2A">Hear from our students who have
-                seized the opportunity
-            </h2>
-            <p class="SectionCard_subtitle__vVqmD hidden lg:block">Explore students journeys who achieved<!-- -->
-                <br>their dream careers with Amity Online
-            </p>
-            <p class="SectionCard_subtitle__vVqmD block lg:hidden">Explore students journeys who achieved their dream
-                careers with Amity Online
-            </p>
-        </div>
-        <div class="SectionCard_hr__sFh5X"></div>
-        <div class="pt-7 lg:pt-7">
-            <h2>
-                <div>
-                    <div>
-                        <div
-                            class="swiper swiper-initialized swiper-horizontal Carousel__blueBullet StudentsCarousel_carousel__XLxe_ swiper-backface-hidden">
-                            <div class="swiper-wrapper"
-                                style="transition-duration: 0ms; transform: translate3d(0px, 0px, 0px); transition-delay: 0ms;">
-                                <div class="swiper-slide swiper-slide-active"
-                                    style="width: 1039px; margin-right: 16px;">
-                                    <div class="flex flex-col">
-                                        <div class="flex justify-between gap-4 StudentsCarousel_testimonialBox__hp3K9">
-                                            <div class="basis-1/2">
-                                                <div
-                                                    class="border border-primary-blue rounded-2xl text-primary-blue lg:flex h-full overflow-hidden">
+    <section class="overflow-x-hidden">
+        <div class="container">
+          <!-- Desktop Carousel (original) -->
+          <div class="SectionCard_root__vJRVT">
+            <div class="flex justify-between lining-nums lg:items-center flex-col lg:flex-row lg:align-center">
+                <h2 class="SectionCard_title__DSA2A">Hear what our students have to say
+                </h2>
+                <p class="SectionCard_subtitle__vVqmD hidden lg:block">Discover student learning experiences<!-- -->
+                    <br>and journeys at Amity Online</p>
+            </div>
+            <div class="SectionCard_hr__sFh5X"></div>
+          <div class="desktop-carousel">
+            <!-- Original carousel content here -->
+                <div class="pt-7 lg:pt-7">
+                    <h2>
+                        <div>
+                            <div class="swiper swiper-initialized swiper-horizontal Carousel__blueBullet StudentsCarousel_carousel__XLxe_ swiper-backface-hidden">
+                                <div class="swiper-wrapper-2" style="transition-duration: 0ms; transform: translate3d(0px, 0px, 0px); transition-delay: 0ms;">
+                                    <div class="swiper-slide swiper-slide-active"
+                                        style="width: 1039px; margin-right: 16px;">
+                                        <div class="flex flex-col">
+                                            <div class="flex justify-between StudentsCarousel_testimonialBox__hp3K9">
+                                                <div class="">
                                                     <div
-                                                        class="mx-auto overflow-hidden lg:border-r-0 lg:border-l basis-[35%] StudentsCarousel_cardImageContainer__utpKq">
-                                                        <img alt="Mohammed Imran Faiz" title="Students Image"
+                                                        class="border border-primary-blue rounded-2xl text-primary-blue flex h-full overflow-hidden">
+                                                        <div
+                                                            class="mx-auto overflow-hidden lg:border-r-0 lg:border-l basis-[35%] StudentsCarousel_cardImageContainer__utpKq">
+                                                            <img alt="Mohammed Imran Faiz" title="Students Image"
                                                             loading="lazy" width="270" height="300" decoding="async"
                                                             data-nimg="1"
                                                             class="object-cover w-full h-full StudentsCarousel_cardImage__gmfV6"
                                                             srcset="https://amityonline.com/_next/image?url=https%3A%2F%2Famityonline.com%2F_sb%2FGroup_48100923_470512ade4.png&w=640&q=75"
                                                             src="https://amityonline.com/_next/image?url=https%3A%2F%2Famityonline.com%2F_sb%2FGroup_48100923_470512ade4.png&w=640&q=75"
                                                             style="color: transparent;">
-                                                    </div>
-                                                    <div
-                                                        class="lg:flex lg:flex-col lg:justify-between h-full basis-[65%] StudentsCarousel_cardContent__8xZ_A">
-                                                        <p
-                                                            class="lg:text-xl font-medium font-raleway StudentsCarousel_shortDesc__uFLAJ">
-                                                            "According to me Placements are good. If we daily attend
+                                                            </div>
+                                                        <div
+                                                            class="lg:flex lg:flex-col lg:justify-between h-full basis-[65%] StudentsCarousel_cardContent__8xZ_A" style="padding: 10px;">
+                                                            <p
+                                                                class="lg:text-xl font-medium font-raleway StudentsCarousel_shortDesc__uFLAJ">
+                                                                "According to me Placements are good. If we daily attend
                                                             online classes and if we daily login to Amity portal. We
                                                             will really come to know about placements Till now nearly 8+
                                                             placements options I have seen in Amity portal."</p>
-                                                        <div>
-                                                            <h2 class="font-baskervville StudentsCarousel_name__CbzkO">
-                                                                Mohammed Imran Faiz</h2>
-                                                            <p
-                                                                class="font-raleway opacity-80 StudentsCarousel_desg__5N20_">
-                                                                MBA, July 2022 Batch, </p>
+                                                            <div>
+                                                                <h2 class="font-baskervville StudentsCarousel_name__CbzkO">
+                                                                    Mohammed Imran Faiz</h2>
+                                                                <p
+                                                                    class="font-raleway opacity-80 StudentsCarousel_desg__5N20_">
+                                                                    MBA, July 2022 Batch,</p>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div class="basis-1/2">
-                                                <div
-                                                    class="border border-primary-blue rounded-2xl text-primary-blue lg:flex h-full overflow-hidden">
+                                                <div class="">
                                                     <div
-                                                        class="mx-auto overflow-hidden lg:border-r-0 lg:border-l basis-[35%] StudentsCarousel_cardImageContainer__utpKq">
-                                                        <img alt="Debraj Bhattacharjee" title="Students Image"
+                                                        class="border border-primary-blue rounded-2xl text-primary-blue flex h-full overflow-hidden">
+                                                        <div
+                                                            class="mx-auto overflow-hidden lg:border-r-0 lg:border-l basis-[35%] StudentsCarousel_cardImageContainer__utpKq">
+                                                            <img alt="Mohammed Imran Faiz" title="Students Image"
                                                             loading="lazy" width="270" height="300" decoding="async"
                                                             data-nimg="1"
                                                             class="object-cover w-full h-full StudentsCarousel_cardImage__gmfV6"
-                                                            srcset="https://amityonline.com/_next/image?url=https%3A%2F%2Famityonline.com%2F_sb%2FGroup_48100926_9807b3d057.png&w=640&q=75"
                                                             src="https://amityonline.com/_next/image?url=https%3A%2F%2Famityonline.com%2F_sb%2FGroup_48100926_9807b3d057.png&w=640&q=75"
                                                             style="color: transparent;">
-                                                    </div>
-                                                    <div
-                                                        class="lg:flex lg:flex-col lg:justify-between h-full basis-[65%] StudentsCarousel_cardContent__8xZ_A">
+                                                            </div>
+                                                        <div
+                                                            class="lg:flex lg:flex-col lg:justify-between h-full basis-[65%] StudentsCarousel_cardContent__8xZ_A" style="padding: 10px;" >
                                                         <p
                                                             class="lg:text-xl font-medium font-raleway StudentsCarousel_shortDesc__uFLAJ">
                                                             "Amity University Online teaches us how to face the
@@ -4090,26 +4242,47 @@
                                                                 MBA, July 2023 Batch, </p>
                                                         </div>
                                                     </div>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div
-                                            class="flex justify-between gap-4 flex-row-reverse StudentsCarousel_testimonialBox__hp3K9">
-                                            <div class="basis-1/2">
-                                                <div
-                                                    class="flex-row-reverse border border-primary-blue rounded-2xl text-primary-blue lg:flex h-full overflow-hidden">
-                                                    <div
-                                                        class="mx-auto overflow-hidden lg:border-r-0 lg:border-l basis-[35%] StudentsCarousel_cardImageContainer__utpKq">
-                                                        <img alt="Adarsh Kumar Yadav" title="Students Image"
+                                            <div class="flex justify-between StudentsCarousel_testimonialBox__hp3K9">
+                                                <div class="">
+                                                    <div class="border border-primary-blue rounded-2xl text-primary-blue flex h-full overflow-hidden">
+                                                    <div class="lg:flex lg:flex-col lg:justify-between h-full basis-[65%] StudentsCarousel_cardContent__8xZ_A" style="padding: 10px;">
+                                                            <p
+                                                                class="lg:text-xl font-medium font-raleway StudentsCarousel_shortDesc__uFLAJ">
+                                                                "The career services team provided me with personalized
+                                                            guidance and advice based on my strengths and career goals
+                                                            that were truly invaluable. Their insights into the industry
+                                                            trends and job market were instrumental in helping me shape
+                                                            my profile to stand out to potential employers. The
+                                                            workshops and mock interview sessions organized by the team
+                                                            were instrumental in boosting my confidence and enhancing my
+                                                            interview skills."</p>
+                                                            <div>
+                                                                <h2 class="font-baskervville StudentsCarousel_name__CbzkO">
+                                                                    Raj Gupt</h2>
+                                                                <p
+                                                                    class="font-raleway opacity-80 StudentsCarousel_desg__5N20_">
+                                                                     BBA, July 2023 Batch,</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="mx-auto overflow-hidden lg:border-r-0 lg:border-l basis-[35%]               StudentsCarousel_cardImageContainer__utpKq">
+                                                            <img alt="Mohammed Imran Faiz" title="Students Image"
                                                             loading="lazy" width="270" height="300" decoding="async"
                                                             data-nimg="1"
                                                             class="object-cover w-full h-full StudentsCarousel_cardImage__gmfV6"
-                                                            srcset="https://amityonline.com/_next/image?url=https%3A%2F%2Famityonline.com%2F_sb%2FGroup_48100924_00c992f646.png&w=640&q=75"
-                                                            src="https://amityonline.com/_next/image?url=https%3A%2F%2Famityonline.com%2F_sb%2FGroup_48100924_00c992f646.png&w=640&q=75"
+                                                            srcset="https://amityonline.com/_next/image?url=https%3A%2F%2Famityonline.com%2F_sb%2FGroup_48100927_63ebb6d38b.png&w=640&q=75"
+                                                            src="https://amityonline.com/_next/image?url=https%3A%2F%2Famityonline.com%2F_sb%2FGroup_48100927_63ebb6d38b.png&w=640&q=75"
                                                             style="color: transparent;">
+                                                            </div>
                                                     </div>
+                                                </div>
+                                                <div class="">
                                                     <div
-                                                        class="lg:flex lg:flex-col lg:justify-between h-full basis-[65%] StudentsCarousel_cardContent__8xZ_A">
+                                                        class="border border-primary-blue rounded-2xl text-primary-blue flex h-full overflow-hidden">
+                                                        <div
+                                                            class="lg:flex lg:flex-col lg:justify-between h-full basis-[65%] StudentsCarousel_cardContent__8xZ_A" style="padding: 10px;">
                                                         <p
                                                             class="lg:text-xl font-medium font-raleway StudentsCarousel_shortDesc__uFLAJ">
                                                             "I am absolutely thrilled to share my heartfelt appreciation
@@ -4124,66 +4297,42 @@
                                                                 Adarsh Kumar Yadav</h2>
                                                             <p
                                                                 class="font-raleway opacity-80 StudentsCarousel_desg__5N20_">
-                                                                MBA, July 2023 Batch, </p>
+                                                               MBA, July 2023 Batch, </p>
                                                         </div>
                                                     </div>
-                                                </div>
-                                            </div>
-                                            <div class="basis-1/2">
-                                                <div
-                                                    class="flex-row-reverse border border-primary-blue rounded-2xl text-primary-blue lg:flex h-full overflow-hidden">
-                                                    <div
-                                                        class="mx-auto overflow-hidden lg:border-r-0 lg:border-l basis-[35%] StudentsCarousel_cardImageContainer__utpKq">
-                                                        <img alt="Raj Gupta" title="Students Image" loading="lazy"
-                                                            width="270" height="300" decoding="async" data-nimg="1"
+                                                        <div
+                                                            class="mx-auto overflow-hidden lg:border-r-0 lg:border-l basis-[35%] StudentsCarousel_cardImageContainer__utpKq">
+                                                            <img alt="Mohammed Imran Faiz" title="Students Image"
+                                                            loading="lazy" width="270" height="300" decoding="async"
+                                                            data-nimg="1"
                                                             class="object-cover w-full h-full StudentsCarousel_cardImage__gmfV6"
-                                                            srcset="https://amityonline.com/_next/image?url=https%3A%2F%2Famityonline.com%2F_sb%2FGroup_48100927_63ebb6d38b.png&w=640&q=75"
-                                                            src="https://amityonline.com/_next/image?url=https%3A%2F%2Famityonline.com%2F_sb%2FGroup_48100927_63ebb6d38b.png&w=640&q=75"
+                                                            srcset="https://amityonline.com/_next/image?url=https%3A%2F%2Famityonline.com%2F_sb%2FGroup_48100924_00c992f646.png&w=640&q=75"
+                                                            src="https://amityonline.com/_next/image?url=https%3A%2F%2Famityonline.com%2F_sb%2FGroup_48100924_00c992f646.png&w=640&q=75"
                                                             style="color: transparent;">
-                                                    </div>
-                                                    <div
-                                                        class="lg:flex lg:flex-col lg:justify-between h-full basis-[65%] StudentsCarousel_cardContent__8xZ_A">
-                                                        <p
-                                                            class="lg:text-xl font-medium font-raleway StudentsCarousel_shortDesc__uFLAJ">
-                                                            "The career services team provided me with personalized
-                                                            guidance and advice based on my strengths and career goals
-                                                            that were truly invaluable. Their insights into the industry
-                                                            trends and job market were instrumental in helping me shape
-                                                            my profile to stand out to potential employers. The
-                                                            workshops and mock interview sessions organized by the team
-                                                            were instrumental in boosting my confidence and enhancing my
-                                                            interview skills."</p>
-                                                        <div>
-                                                            <h2 class="font-baskervville StudentsCarousel_name__CbzkO">
-                                                                Raj Gupta</h2>
-                                                            <p
-                                                                class="font-raleway opacity-80 StudentsCarousel_desg__5N20_">
-                                                                BBA, July 2023 Batch, </p>
-                                                        </div>
+                                                            </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="swiper-slide swiper-slide-next" style="width: 1039px; margin-right: 16px;">
-                                    <div class="flex flex-col">
-                                        <div class="flex justify-between gap-4 StudentsCarousel_testimonialBox__hp3K9">
-                                            <div class="basis-1/2">
-                                                <div
-                                                    class="border border-primary-blue rounded-2xl text-primary-blue lg:flex h-full overflow-hidden">
+                                    <div class="swiper-slide swiper-slide-active"
+                                        style="width: 1039px; margin-right: 16px;">
+                                        <div class="flex flex-col">
+                                            <div class="flex justify-between StudentsCarousel_testimonialBox__hp3K9">
+                                                <div class="">
                                                     <div
-                                                        class="mx-auto overflow-hidden lg:border-r-0 lg:border-l basis-[35%] StudentsCarousel_cardImageContainer__utpKq">
-                                                        <img alt="Debraj Bhattacharjee" title="Students Image"
+                                                        class="border border-primary-blue rounded-2xl text-primary-blue flex h-full overflow-hidden">
+                                                        <div
+                                                            class="mx-auto overflow-hidden lg:border-r-0 lg:border-l basis-[35%] StudentsCarousel_cardImageContainer__utpKq">
+                                                            <img alt="Mohammed Imran Faiz" title="Students Image"
                                                             loading="lazy" width="270" height="300" decoding="async"
                                                             data-nimg="1"
                                                             class="object-cover w-full h-full StudentsCarousel_cardImage__gmfV6"
-                                                            srcset="https://amityonline.com/_next/image?url=https%3A%2F%2Famityonline.com%2F_sb%2FGroup_48100926_9807b3d057.png&w=640&q=75"
                                                             src="https://amityonline.com/_next/image?url=https%3A%2F%2Famityonline.com%2F_sb%2FGroup_48100926_9807b3d057.png&w=640&q=75"
                                                             style="color: transparent;">
-                                                    </div>
-                                                    <div
-                                                        class="lg:flex lg:flex-col lg:justify-between h-full basis-[65%] StudentsCarousel_cardContent__8xZ_A">
+                                                            </div>
+                                                        <div
+                                                            class="lg:flex lg:flex-col lg:justify-between h-full basis-[65%] StudentsCarousel_cardContent__8xZ_A" style="padding: 10px;">
                                                         <p
                                                             class="lg:text-xl font-medium font-raleway StudentsCarousel_shortDesc__uFLAJ">
                                                             "Amity University Online teaches us how to face the
@@ -4200,55 +4349,76 @@
                                                                 MBA, July 2023 Batch, </p>
                                                         </div>
                                                     </div>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="basis-1/2">
-                                                <div
-                                                    class="border border-primary-blue rounded-2xl text-primary-blue flex h-full overflow-hidden">
+                                                <div class="">
                                                     <div
-                                                        class="mx-auto overflow-hidden lg:border-r-0 lg:border-l basis-[35%] StudentsCarousel_cardImageContainer__utpKq">
-                                                        <img alt="Akanksha" title="Students Image" loading="lazy"
-                                                            width="270" height="300" decoding="async" data-nimg="1"
+                                                        class="border border-primary-blue rounded-2xl text-primary-blue flex h-full overflow-hidden">
+                                                        <div
+                                                            class="mx-auto overflow-hidden lg:border-r-0 lg:border-l basis-[35%] StudentsCarousel_cardImageContainer__utpKq">
+                                                            <img alt="Mohammed Imran Faiz" title="Students Image"
+                                                            loading="lazy" width="270" height="300" decoding="async"
+                                                            data-nimg="1"
                                                             class="object-cover w-full h-full StudentsCarousel_cardImage__gmfV6"
                                                             srcset="https://amityonline.com/_next/image?url=https%3A%2F%2Famityonline.com%2F_s%2Fpic_1_98296a61fc.webp&w=640&q=75"
                                                             src="https://amityonline.com/_next/image?url=https%3A%2F%2Famityonline.com%2F_s%2Fpic_1_98296a61fc.webp&w=640&q=75"
                                                             style="color: transparent;">
-                                                    </div>
-                                                    <div
-                                                        class="lg:flex lg:flex-col lg:justify-between h-full basis-[65%] StudentsCarousel_cardContent__8xZ_A">
-                                                        <p
-                                                            class="lg:text-xl font-medium font-raleway StudentsCarousel_shortDesc__uFLAJ">
-                                                            "Hey, I'm Akanksha, a BCom graduate from Amity Online. I'm
-                                                            thrilled to be a gold medalist. Amity Online offered an
-                                                            incredible learning experience, allowing me to study from
-                                                            the comfort of my home with unmatched flexibility."</p>
-                                                        <div>
-                                                            <h2 class="font-baskervville StudentsCarousel_name__CbzkO">
-                                                                Akanksha</h2>
+                                                            </div>
+                                                        <div
+                                                            class="lg:flex lg:flex-col lg:justify-between h-full basis-[65%] StudentsCarousel_cardContent__8xZ_A" style="padding: 10px;">
                                                             <p
-                                                                class="font-raleway opacity-80 StudentsCarousel_desg__5N20_">
-                                                                B.Com, Student</p>
+                                                                class="lg:text-xl font-medium font-raleway StudentsCarousel_shortDesc__uFLAJ">
+                                                                "Hey, I'm Akanksha, a BCom graduate from Amity Online. I'm
+                                                                thrilled to be a gold medalist. Amity Online offered an
+                                                                incredible learning experience, allowing me to study from
+                                                                the comfort of my home with unmatched flexibility."</p>
+                                                            <div>
+                                                                <h2 class="font-baskervville StudentsCarousel_name__CbzkO">
+                                                                    Akanksha</h2>
+                                                                <p
+                                                                    class="font-raleway opacity-80 StudentsCarousel_desg__5N20_">
+                                                                    B.Com, Student</p>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
+                                                
                                             </div>
-                                        </div>
-                                        <div
-                                            class="flex justify-between gap-4 flex-row-reverse StudentsCarousel_testimonialBox__hp3K9">
-                                            <div class="basis-1/2">
-                                                <div
-                                                    class="flex-row-reverse border border-primary-blue rounded-2xl text-primary-blue lg:flex h-full overflow-hidden">
-                                                    <div
-                                                        class="mx-auto overflow-hidden lg:border-r-0 lg:border-l basis-[35%] StudentsCarousel_cardImageContainer__utpKq">
-                                                        <img alt="Raj Gupta" title="Students Image" loading="lazy"
-                                                            width="270" height="300" decoding="async" data-nimg="1"
+                                            <div class="flex justify-between StudentsCarousel_testimonialBox__hp3K9">
+                                                <div class="">
+                                                    <div class="border border-primary-blue rounded-2xl text-primary-blue flex h-full overflow-hidden">
+                                                    <div class="lg:flex lg:flex-col lg:justify-between h-full basis-[65%] StudentsCarousel_cardContent__8xZ_A" style="padding: 10px;">
+                                                            <p
+                                                                class="lg:text-xl font-medium font-raleway StudentsCarousel_shortDesc__uFLAJ">
+                                                                "I am pursuing my BBA from Amity Online. My experience has
+                                                                been incredible till now. Faculty is very helpful and
+                                                                understanding in every aspect, whether it is related to
+                                                                studies or any other queries. I will be happy to recommend
+                                                                Amity Online to my peers."</p>
+                                                            <div>
+                                                                <h2 class="font-baskervville StudentsCarousel_name__CbzkO">
+                                                                    Jia Bhatia</h2>
+                                                                <p
+                                                                    class="font-raleway opacity-80 StudentsCarousel_desg__5N20_">
+                                                                    BBA , Student</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="mx-auto overflow-hidden lg:border-r-0 lg:border-l basis-[35%]               StudentsCarousel_cardImageContainer__utpKq">
+                                                            <img alt="Mohammed Imran Faiz" title="Students Image"
+                                                            loading="lazy" width="270" height="300" decoding="async"
+                                                            data-nimg="1"
                                                             class="object-cover w-full h-full StudentsCarousel_cardImage__gmfV6"
-                                                            srcset="/_next/image?url=https%3A%2F%2Famityonline.com%2F_sb%2FGroup_48100927_63ebb6d38b.png&amp;w=384&amp;q=75 1x, /_next/image?url=https%3A%2F%2Famityonline.com%2F_sb%2FGroup_48100927_63ebb6d38b.png&amp;w=640&amp;q=75 2x"
-                                                            src="/_next/image?url=https%3A%2F%2Famityonline.com%2F_sb%2FGroup_48100927_63ebb6d38b.png&amp;w=640&amp;q=75"
+                                                            srcset="https://amityonline.com/_next/image?url=https%3A%2F%2Famityonline.com%2F_s%2FGroup_48100630_1_4709c18a73_839eb2d67f.webp&w=640&q=75"
+                                                            src="https://amityonline.com/_next/image?url=https%3A%2F%2Famityonline.com%2F_s%2FGroup_48100630_1_4709c18a73_839eb2d67f.webp&w=640&q=75"
                                                             style="color: transparent;">
+                                                            </div>
                                                     </div>
+                                                </div>
+                                                <div class="">
                                                     <div
-                                                        class="lg:flex lg:flex-col lg:justify-between h-full basis-[65%] StudentsCarousel_cardContent__8xZ_A">
+                                                        class="border border-primary-blue rounded-2xl text-primary-blue flex h-full overflow-hidden">
+                                                        <div
+                                                            class="lg:flex lg:flex-col lg:justify-between h-full basis-[65%] StudentsCarousel_cardContent__8xZ_A" style="padding: 10px;">
                                                         <p
                                                             class="lg:text-xl font-medium font-raleway StudentsCarousel_shortDesc__uFLAJ">
                                                             "The career services team provided me with personalized
@@ -4267,54 +4437,33 @@
                                                                 BBA, July 2023 Batch, </p>
                                                         </div>
                                                     </div>
-                                                </div>
-                                            </div>
-                                            <div class="basis-1/2">
-                                                <div
-                                                    class="flex-row-reverse border border-primary-blue rounded-2xl text-primary-blue lg:flex h-full overflow-hidden">
-                                                    <div
-                                                        class="mx-auto overflow-hidden lg:border-r-0 lg:border-l basis-[35%] StudentsCarousel_cardImageContainer__utpKq">
-                                                        <img alt="Students Image" title="Students Image" loading="lazy"
-                                                            width="270" height="300" decoding="async" data-nimg="1"
+                                                        <div
+                                                            class="mx-auto overflow-hidden lg:border-r-0 lg:border-l basis-[35%] StudentsCarousel_cardImageContainer__utpKq">
+                                                            <img alt="Mohammed Imran Faiz" title="Students Image"
+                                                            loading="lazy" width="270" height="300" decoding="async"
+                                                            data-nimg="1"
                                                             class="object-cover w-full h-full StudentsCarousel_cardImage__gmfV6"
-                                                            srcset="https://amityonline.com/_next/image?url=https%3A%2F%2Famityonline.com%2F_s%2FGroup_48100630_1_4709c18a73_839eb2d67f.webp&w=640&q=75"
-                                                            src="https://amityonline.com/_next/image?url=https%3A%2F%2Famityonline.com%2F_s%2FGroup_48100630_1_4709c18a73_839eb2d67f.webp&w=640&q=75"
-                                                            style="color: transparent;">
-                                                    </div>
-                                                    <div
-                                                        class="lg:flex lg:flex-col lg:justify-between h-full basis-[65%] StudentsCarousel_cardContent__8xZ_A">
-                                                        <p
-                                                            class="lg:text-xl font-medium font-raleway StudentsCarousel_shortDesc__uFLAJ">
-                                                            "I am pursuing my BBA from Amity Online. My experience has
-                                                            been incredible till now. Faculty is very helpful and
-                                                            understanding in every aspect, whether it is related to
-                                                            studies or any other queries. I will be happy to recommend
-                                                            Amity Online to my peers."</p>
-                                                        <div>
-                                                            <h2 class="font-baskervville StudentsCarousel_name__CbzkO">
-                                                                Jia Bhatia</h2>
-                                                            <p
-                                                                class="font-raleway opacity-80 StudentsCarousel_desg__5N20_">
-                                                                BBA , Student</p>
-                                                        </div>
+                                                            src="https://beta-fe.amityonline.com/_next/image?url=https%3A%2F%2Fbeta-fe.amityonline.com%2F_sb%2FGroup_48100927_63ebb6d38b.png&w=384&q=75">
+                                                            </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div
-                                class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal">
-                                <div class="swiper-pagination-bullet swiper-pagination-bullet-active"></div>
-                                <div class="swiper-pagination-bullet"></div>
+                                <div
+                                    class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal">
+                                    <div class="swiper-pagination-bullet swiper-pagination-bullet-active"></div>
+                                    <div class="swiper-pagination-bullet"></div>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </h2>
                 </div>
-            </h2>
+            </div>
+          </div>
         </div>
-    </div>
+      </section>
     <section class="undefined">
         <div class="container">
             <div class="SectionCard_root__vJRVT SectionCard_card__76a8h">
@@ -4429,49 +4578,98 @@
         </div>
     </section>
     <!-- footer start  -->
-    <div id="footer-container"></div>
-    <!-- footer end -->
-    <!-- toggel start  -->
-    <div class="sticky-apply">
-        <div class="sticky-apply-btn" id="apply-now-btn">APPLY NOW</div>
-    </div>
-    <!-- togel end -->
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"
-        integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.min.js"
-        integrity="sha512-1/RvZTcCDEUjY/CypiMz+iqqtaoQfAITmNSJY17Myp4Ms5mdxPS5UV7iOfdZoxcGhzFbOm6sntTKJppjvuhg4g=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="./../CommonJS/index.js"></script>
-    <script src="./../CommonJS/footer.js"></script>
-    <script src="./../CommonJS/modals.js"></script>
-    <!-- <script src="./../CommonJS/applyModal.js"></script> -->
+  <div id="footer-container"></div>
+  <!-- footer end -->
+  <!-- toggel start  -->
+  <div class="sticky-apply">
+    <div class="sticky-apply-btn"  id="apply-now-btn">APPLY NOW</div>
+  </div>
+  <!-- togel end -->
 
-    <script>
-        document.addEventListener('DOMContentLoaded', async function () {
-            // Load components in order
-            await includeComponent('../components/header.html', 'header-container');
-            await includeComponent('../components/brochureModal.html', 'modal-container');
-            await includeComponent('../components/loginModal.html', 'login-modal');
-            await includeComponent('../components/applyModal.html', 'apply-modal-container');
-            await includeComponent('../components/programsModal.html', 'programs-modal-container');
-            await includeComponent('../components/mobileMenu.html', 'mobile-menu-container');
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"
+    integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.min.js"
+    integrity="sha512-1/RvZTcCDEUjY/CypiMz+iqqtaoQfAITmNSJY17Myp4Ms5mdxPS5UV7iOfdZoxcGhzFbOm6sntTKJppjvuhg4g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="./../CommonJS/index.js"></script>
+  <script src="./../CommonJS/footer.js"></script>
+  <script src="./../CommonJS/modals.js"></script>
+  <script src="./amityadv.js"></script>
+  <!-- <script src="./../CommonJS/applyModal.js"></script> -->
+   
+  <script>
+    document.addEventListener('DOMContentLoaded', async function() {
+    // Load components in order
+    await includeComponent('../components/header.html', 'header-container');
+    await includeComponent('../components/brochureModal.html', 'modal-container');
+    await includeComponent('../components/loginModal.html', 'login-modal');
+    await includeComponent('../components/applyModal.html', 'apply-modal-container');
+    await includeComponent('../components/programsModal.html', 'programs-modal-container');
+    await includeComponent('../components/mobileMenu.html', 'mobile-menu-container');
 
-            // Additional initializations that depend on header
-            initializeProgramsModal();
-            // initializeMobileMenu();
-        });
+    // Additional initializations that depend on header
+    initializeProgramsModal();
+    // initializeMobileMenu();
+});
+   
+    document.addEventListener('DOMContentLoaded', function() {
+        
+        includeFooterComponent('../components/footer.html', 'footer-container');
+        // includeHeaderComponent('../components/header.html', 'header-container');
+    });
 
-        document.addEventListener('DOMContentLoaded', function () {
+</script>
+<script>
+  // Initialize desktop carousel
+  const desktopSwiper = new Swiper('.desktop-carousel .swiper', {
+    slidesPerView: 1,
+    spaceBetween: 16,
+    loop: true,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true
+    },
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false
+    }
+  });
 
-            includeFooterComponent('../components/footer.html', 'footer-container');
-            // includeHeaderComponent('../components/header.html', 'header-container');
-        });
+ // Initialize mobile testimonial carousel
+const testimonialSwiper = new Swiper('.testimonial-carousel', {
+  slidesPerView: 1,
+  spaceBetween: 20,
+  loop: true,
+  pagination: {
+    el: '.testimonial-carousel .swiper-pagination',
+    clickable: true
+  },
+  breakpoints: {
+    // Small tablets
+    480: {
+      slidesPerView: 1.2
+    }
+  }
+});
 
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script>
+  const videoSwiper = new Swiper('.video-carousel', {
+    slidesPerView: 1.2,
+    centeredSlides: true,
+    spaceBetween: 16,
+    loop: true,
+    pagination: {
+      el: '.video-carousel .swiper-pagination',
+      clickable: true
+    }
+  });
 
-    </script>
+  // Handle window resize
+  window.addEventListener('resize', () => {
+    [desktopSwiper, testimonialSwiper, videoSwiper].forEach(swiper => swiper.update());
+  });
+</script>
+
 </body>
 
 </html>
